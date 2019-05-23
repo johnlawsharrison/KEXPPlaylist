@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+
+// Here we would import any child component theme mixins
+// which will be @included using this parent mixin
+@import './app/navbar/navbar-theme';
+
+@mixin shelves-app-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $purple: mat-palette($mat-purple);
+
+    .app-background {
+        background: mat-color($background, background);
+    }
+
+    /* custom color helper classes (for text spans etc) */
+    .kexp-orange {
+        color: mat-color($accent, 500)
+    }
+
+    .mb-purple {
+        color: mat-color($purple, A400)
+    }
+
+    .warn-red {
+        color: mat-color($warn)
+    }
+
+    // snackbar for feedback to user
+    .custom-snackbar {
+        background-color: mat-color($accent);
+        width: 100vw;
+        text-align: center;
+    }
+
+    // error snackbar color
+    .warn-snackbar {
+        background: mat-color($warn);
+    }
+
+    // individual component theming setup
+    @include nav-bar-theme($theme);
+}
