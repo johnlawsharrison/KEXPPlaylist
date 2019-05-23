@@ -1,3 +1,6 @@
+# ignore built angular static files
+backend/playlist-backend/static/angular
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

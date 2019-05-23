@@ -1,0 +1,24 @@
+// main.scss acts as a global initializer
+// for all the styles in this app
+// here we simply define our Material theme(s)
+// and include all of the core styles of the Material module
+@import '~@angular/material/theming';
+@import './app-theme';
+@import './styles/general';
+
+// Include core material styles (builtins)
+@include mat-core();
+
+// define dark theme palettes
+$primary: mat-palette($mat-grey, 900, 400);
+$accent: mat-palette($mat-amber, 500, 900);
+$warn: mat-palette($mat-red);
+
+// create the dark theme
+$theme: mat-dark-theme($primary, $accent, $warn);
+// re-using the theme from 'Shelves'
+// here we pass the theme definition to the app mixin function
+// (_app-theme.scss) which will output the styles and handle
+// theming for all child components
+@include angular-material-theme($theme);
+@include shelves-app-theme($theme);

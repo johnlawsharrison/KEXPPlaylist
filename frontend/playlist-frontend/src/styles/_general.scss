@@ -1,0 +1,32 @@
+/*
+Global, general styling rules
+(text, defaults, body etc)
+*/
+
+// for debugging
+//* {
+//     outline: 1px solid red;
+// }
+
+body {
+    margin: 0;
+    font-family: "Roboto","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+app-draft-list {
+    display: flex;
+    flex-direction: column;
+    // height: 90vh; // to allow for scrolling independent of mat-sidenav-content
+    padding: 40px 200px 0px 200px;
+}
