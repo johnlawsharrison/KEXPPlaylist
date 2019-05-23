@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['PG_DB_NAME'],
-        'HOST': os.environ['PG_HOST'],
-        'USER': os.environ['PG_USER'],
-        'PASSWORD': os.environ['PG_PASS'],
+        'NAME': os.environ.get('PG_DB_NAME', 'KEXPPlaylist'),
+        'HOST': os.environ.get('PG_HOST', 'localhost'),
+        'USER': os.environ.get('PG_USER', ''),
+        'PASSWORD': os.environ.get('PG_PASS', ''),
         'PORT': '5432',
     }
 }
