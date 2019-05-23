@@ -2,7 +2,7 @@
 
 ## Backend setup (Django)
 
-Set the following envvars:
+Set the following envvars for the postgres connection:
 
 ```
 export PG_HOST=<hostname for your postgresql server; defaults to localhost>
