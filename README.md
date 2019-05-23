@@ -14,5 +14,5 @@ export PG_PASSWORD=<password for user above>
 
 ```
 cd frontend/playlist-frontend
-ng build --prod --output-path ../../backend/static/ang --watch --output-hashing none
+ng build --prod --output-path ../../backend/playlist-backend/static/ang --watch --output-hashing none
 ```
