@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def index(request):
+    return HttpResponse("This is the comments app, which will probably end up being a DRF app")
