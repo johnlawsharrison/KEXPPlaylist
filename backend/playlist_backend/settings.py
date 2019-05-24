@@ -55,7 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'playlist-backend/templates'),
+            os.path.join(BASE_DIR, 'playlist_backend/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
