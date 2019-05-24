@@ -16,7 +16,7 @@ python3 -m venv venv
 Install the Django app's dependencies
 
 ```
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 Set the following envvars for the postgres connection:
@@ -46,5 +46,6 @@ to rebuild every time a change is seen in the source code
 (assuming a postgres server is already configured and running)
 
 ```
-python backend/manage.py runserver
+cd backend
+python manage.py runserver
 ```
