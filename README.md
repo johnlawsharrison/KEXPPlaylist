@@ -16,7 +16,7 @@ python3 -m venv venv
 Install the Django app's dependencies
 
 ```
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 Set the following envvars for the postgres connection:
@@ -35,7 +35,7 @@ In order for it to be served via the Django app, it must be built to the appropr
 
 ```
 cd frontend/playlist-frontend
-ng build --prod --output-path ../../backend/playlist-backend/static/angular --watch --output-hashing none
+ng build --prod --output-path ../../backend/playlist_backend/static/angular --watch --output-hashing none
 ```
 
 the `--watch` flag is optional, and can be excluded if you don't want the angular project
@@ -46,5 +46,6 @@ to rebuild every time a change is seen in the source code
 (assuming a postgres server is already configured and running)
 
 ```
-python backend/manage.py runserver
+cd backend
+python manage.py runserver
 ```
