@@ -1,17 +1,5 @@
 from django.db import models
 
-
-class Comment(models.Model):
-    """
-    A comment annotating a play row in the playlist
-    """
-    comment_text = models.CharField(max_length=1000)
-    # play_id, the id from the playlist API to which this comment is associated
-    date_created = models.DateTimeField('date created')
-    last_updated = models.DateTimeField('last updated')
-    author = models.ForeignKey(Author)
-
-
 class Author(models.Model):
     """
     The author of a comment
@@ -23,6 +11,17 @@ class Author(models.Model):
     last_name = models.CharField(max_length=64)
     role = models.CharField(max_length=64)
     total_comments = models.IntegerField(default=0)
+
+
+class Comment(models.Model):
+    """
+    A comment annotating a play row in the playlist
+    """
+    comment_text = models.CharField(max_length=1000)
+    # play_id, the id from the playlist API to which this comment is associated
+    date_created = models.DateTimeField('date created')
+    last_updated = models.DateTimeField('last updated')
+    author = models.ForeignKey(Author)
 
 
 class CommentLink(models.Model):
