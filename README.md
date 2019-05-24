@@ -22,10 +22,19 @@ pip install -r requirements.txt
 Set the following envvars for the postgres connection:
 
 ```
-export PG_HOST=<hostname for your postgresql server; defaults to localhost>
-export PG_DB_NAME="KEXPPlaylist" # you may need to create this DB first
+export PG_HOST="<hostname for your postgresql server; defaults to localhost>"
+export PG_DB_NAME="playlist" # you may need to create this DB first
 export PG_USER=<username with access to the db above>
 export PG_PASSWORD=<password for user above>
+```
+
+(for dev use only)
+Generate a new secret key for Django to use, and set it here:
+
+```
+python genkey.py
+<outputs a key>
+export SECRET_KEY='very secret key'
 ```
 
 ### Building the Angular frontend
