@@ -21,7 +21,7 @@ class Comment(models.Model):
     A comment annotating a play row in the playlist
     """
     comment_text = models.CharField(max_length=1000)
-    # play_id, the id from the playlist API to which this comment is associated
+    play_id = models.CharField(max_length=64)
     date_created = models.DateTimeField('date created')
     last_updated = models.DateTimeField('last updated')
     author = models.ForeignKey(Author)
