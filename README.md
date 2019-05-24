@@ -35,7 +35,7 @@ In order for it to be served via the Django app, it must be built to the appropr
 
 ```
 cd frontend/playlist-frontend
-ng build --prod --output-path ../../backend/playlist-backend/static/angular --watch --output-hashing none
+ng build --prod --output-path ../../backend/playlist_backend/static/angular --watch --output-hashing none
 ```
 
 the `--watch` flag is optional, and can be excluded if you don't want the angular project
