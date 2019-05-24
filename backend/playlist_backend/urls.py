@@ -19,6 +19,7 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api-auth/', include('rest_framework.urls')), # DRF login/logout for browsable API
     url(r'^[Pp]laylist/', TemplateView.as_view(template_name="playlist.html"), name="playlist"),
     url(r'^comments/', include('comments.urls')),
 ]
