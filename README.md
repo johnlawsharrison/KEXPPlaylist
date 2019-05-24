@@ -45,7 +45,15 @@ to rebuild every time a change is seen in the source code
 
 (assuming a postgres server is already configured and running)
 
+Run the necessary migrations
+
 ```
 cd backend
+python manage.py migrate
+```
+
+start the server
+
+```
 python manage.py runserver
 ```
