@@ -12,6 +12,9 @@ class Author(models.Model):
     role = models.CharField(max_length=64)
     total_comments = models.IntegerField(default=0)
 
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
+
 
 class Comment(models.Model):
     """
@@ -22,6 +25,9 @@ class Comment(models.Model):
     date_created = models.DateTimeField('date created')
     last_updated = models.DateTimeField('last updated')
     author = models.ForeignKey(Author)
+
+    def __str__(self):
+        return self.comment_text
 
 
 class CommentLink(models.Model):
@@ -36,3 +42,6 @@ class CommentLink(models.Model):
     """
     comment = models.ForeignKey(Comment)
     url = models.URLField()
+
+    def __str__(self):
+        return self.url
