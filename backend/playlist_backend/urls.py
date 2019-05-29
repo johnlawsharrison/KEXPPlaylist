@@ -27,7 +27,7 @@ router.register(r'authors', views.AuthorViewSet)
 router.register(r'links', views.LinkViewSet)
 
 urlpatterns = [
-    url(r'', include(router.urls)), # REST API for CRUD operations (authors, links, comments)
+    url(r'api_v1/', include(router.urls)), # REST API for CRUD operations (authors, links, comments)
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')), # DRF login/logout for browsable API
     # entrypoint for the Angular app
