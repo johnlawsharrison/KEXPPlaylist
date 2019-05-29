@@ -1,4 +1,4 @@
-from models import Comment, Author, CommentLink
+from comments.models import Comment, Author, CommentLink
 from rest_framework import serializers
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
