@@ -17,8 +17,18 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
+from rest_framework import routers
+
+from comments import views
+
+router = routers.DefaultRouter()
+router.register(r'comments', views.CommentViewSet)
+router.register(r'authors', views.AuthorViewSet)
+router.register(r'links', views.CommentLinkViewSet)
+
 urlpatterns = [
+    url(r'', include(router.urls)),
     url(r'^admin/', admin.site.urls),
+    url(r'^api-auth/', include('rest_framework.urls')), # DRF login/logout for browsable API
     url(r'^[Pp]laylist/', TemplateView.as_view(template_name="playlist.html"), name="playlist"),
-    url(r'^comments/', include('comments.urls')),
 ]

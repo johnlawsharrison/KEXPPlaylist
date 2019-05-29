@@ -41,7 +41,7 @@ class CommentLink(models.Model):
     links to artists, labels, etc via the playlist API
     """
     comment = models.ForeignKey(Comment)
-    url = models.URLField()
+    link_url = models.URLField()
 
     def __str__(self):
         return self.url
