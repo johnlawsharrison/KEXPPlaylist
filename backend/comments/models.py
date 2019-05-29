@@ -30,18 +30,21 @@ class Comment(models.Model):
         return self.comment_text
 
 
-class CommentLink(models.Model):
+class Link(models.Model):
     """
-    A link used to annotate a comment
-    A comment can have multiple links
+    A link used to annotate a play
+    Note:
+        A play can have multiple links, so this is a separate model
+        for the sake of maintaining normalization
+
 
     Normalizing this out allows us to save previously added links,
     potential use in suggesting links in the future,
     getting rich info to add to artist pages and allows us to associate
     links to artists, labels, etc via the playlist API
     """
-    comment = models.ForeignKey(Comment)
+    play = models.CharField(max_length=64)
     link_url = models.URLField()
 
     def __str__(self):
-        return self.url
+        return '({}, {})'.format(self.link_url, self.play)

@@ -3,8 +3,8 @@ from django.http import HttpResponse
 
 from rest_framework import viewsets
 
-from comments.models import Comment, CommentLink, Author
-from comments.serializers import CommentSerializer, AuthorSerializer, CommentLinkSerializer
+from comments.models import Comment, Link, Author
+from comments.serializers import CommentSerializer, AuthorSerializer, LinkSerializer
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -23,9 +23,9 @@ class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorSerializer
 
 
-class CommentLinkViewSet(viewsets.ModelViewSet):
+class LinkViewSet(viewsets.ModelViewSet):
     """
-    The set of REST framework API views for the CommentLink model
+    The set of REST framework API views for the Link model
     """
-    queryset = CommentLink.objects.all()
-    serializer_class = CommentLinkSerializer
+    queryset = Link.objects.all()
+    serializer_class = LinkSerializer
