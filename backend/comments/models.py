@@ -21,7 +21,7 @@ class Comment(models.Model):
     A comment annotating a play row in the playlist
     """
     comment_text = models.CharField(max_length=1000)
-    play = models.CharField(max_length=64, default='')
+    play_id = models.IntegerField(default=0)
     date_created = models.DateTimeField('date created')
     last_updated = models.DateTimeField('last updated')
     author = models.ForeignKey(Author)
@@ -43,8 +43,8 @@ class Link(models.Model):
     getting rich info to add to artist pages and allows us to associate
     links to artists, labels, etc via the playlist API
     """
-    play = models.CharField(max_length=64)
+    play_id = models.IntegerField(default=0)
     link_url = models.URLField()
 
     def __str__(self):
-        return '({}, {})'.format(self.link_url, self.play)
+        return '({}, {})'.format(self.link_url, self.play_id)

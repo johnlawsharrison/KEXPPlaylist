@@ -5,7 +5,7 @@ from rest_framework import serializers
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Comment
-        fields = ['url', 'comment_text', 'play', 'date_created', 'last_updated', 'author']
+        fields = ['url', 'comment_text', 'play_id', 'date_created', 'last_updated', 'author']
 
 
 class AuthorSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,4 +17,4 @@ class AuthorSerializer(serializers.HyperlinkedModelSerializer):
 class LinkSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Link
-        fields = ['url', 'link_url', 'play']
+        fields = ['url', 'link_url', 'play_id']
