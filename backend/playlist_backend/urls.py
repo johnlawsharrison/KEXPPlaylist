@@ -24,7 +24,7 @@ from comments import views
 router = routers.DefaultRouter()
 router.register(r'comments', views.CommentViewSet)
 router.register(r'authors', views.AuthorViewSet)
-router.register(r'links', views.CommentLinkViewSet)
+router.register(r'links', views.LinkViewSet)
 
 urlpatterns = [
     url(r'', include(router.urls)), # REST API for CRUD operations (authors, links, comments)
