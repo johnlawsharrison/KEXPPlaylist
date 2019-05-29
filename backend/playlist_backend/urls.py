@@ -27,8 +27,9 @@ router.register(r'authors', views.AuthorViewSet)
 router.register(r'links', views.CommentLinkViewSet)
 
 urlpatterns = [
-    url(r'', include(router.urls)),
+    url(r'', include(router.urls)), # REST API for CRUD operations (authors, links, comments)
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')), # DRF login/logout for browsable API
+    # entrypoint for the Angular app
     url(r'^[Pp]laylist/', TemplateView.as_view(template_name="playlist.html"), name="playlist"),
 ]
