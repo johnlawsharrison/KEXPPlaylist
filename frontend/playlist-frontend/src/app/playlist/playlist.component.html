@@ -1,1 +1,10 @@
-
+<div class='card-list-container'>
+    <mat-card *ngFor="let play of recentPlays">
+        <div *ngIf="play.playtype.playtypeid === 1">
+            {{play.track.name}} by {{play.artist.name}}
+        </div>
+        <div *ngIf="play.playtype.playtypeid === 4">
+            Air break
+        </div>
+    </mat-card>
+</div>
