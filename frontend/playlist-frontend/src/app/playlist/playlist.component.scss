@@ -1,7 +1,71 @@
-.card-list-container {
-    padding: 200px;
+.header-section {
+    padding: 40px 20%;
 }
 
-mat-card {
+.card-list-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 20%;
+}
+
+.card-container {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    .mat-card-header {
+        margin-left: 24px;
+    }
+}
+
+.airdate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.playlist-item {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 20px;
+}
+
+.play-title-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.air-break {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-grow: 1;
+
+    span {
+        position: relative;
+        display: inline-block;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 300px;
+            height: 1px;
+            background: grey;
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
 }
