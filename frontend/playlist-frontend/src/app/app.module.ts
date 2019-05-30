@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppMaterialModule } from './shared/material/app-material.module';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,
