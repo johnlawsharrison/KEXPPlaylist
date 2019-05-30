@@ -39,7 +39,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Play } from './models/play';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +55,7 @@ export class PlaylistService {
         // 'Authorization': 'my-auth-token'
       }),
       params: new HttpParams()
-      .append('begin_time', beginTime.toISOString()) // to string or what?
+      .append('begin_time', beginTime.toISOString())
       .append('end_time', endTime.toISOString())
     };
     return this.http.get<any>(url, options).pipe(
