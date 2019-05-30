@@ -1,5 +1,14 @@
 # KEXPPlaylist
 
+# References and resources
+I made use of the following documentation and blog post resources when putting this project together. I've labelled each of these with the specific problem area I found them useful for.
+
+   * [Django Rest Framework (for CRUD operations)](https://www.django-rest-framework.org/api-guide/)
+   * [django-filter (for filtering comments by play_ids etc.)](https://django-filter.readthedocs.io/en/master/ref/filters.html)
+   * [getting Angular to build properly to a Django project](https://medium.com/swlh/django-angular-4-a-powerful-web-application-60b6fb39ef34)
+
+and StackOverflow for the occasional perplexing error message
+
 ## Quick dev/demo mode setup
 
 All commands below are written with the working directory as the root of this repository
