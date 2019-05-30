@@ -9,6 +9,7 @@ class CommentModelTest(TestCase):
         comment = Comment(comment_text="Pile is a good band")
         self.assertEqual(str(comment), comment.comment_text)
 
+
 # author default to KEXP?
 class AuthorModelTest(TestCase):
 
