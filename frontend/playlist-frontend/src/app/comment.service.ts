@@ -36,10 +36,18 @@ export class CommentService {
   }
 
   /**
-   * Gets a comment associated with the given playID
+   * Gets a single comment associated with the given playID
    * @param playID: a KEXP playlist API id for an individual play
    */
   getCommentByPlayId(playID: number) {
+  }
+
+
+  /**
+   * Gets comments by play ids
+   * @param playIDs: a list of KEXP playlist API ids for a set of plays
+   */
+  getCommentsByPlayIds(playIDs: number[]) {
   }
 
   /**
