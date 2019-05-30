@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppMaterialModule } from './shared/material/app-material.module';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { PlaylistComponent } from './playlist/playlist.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppMaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
