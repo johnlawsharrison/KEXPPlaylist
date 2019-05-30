@@ -5,6 +5,7 @@ I made use of the following documentation and blog post resources when putting t
 
    * [Django Rest Framework (for CRUD operations)](https://www.django-rest-framework.org/api-guide/)
    * [django-filter (for filtering comments by play_ids etc.)](https://django-filter.readthedocs.io/en/master/ref/filters.html)
+   * [a bug I ran into building multi-value filtering for play-ids](https://stackoverflow.com/questions/8144582/django-how-do-i-use-a-string-as-the-keyword-in-a-q-statement)
    * [getting Angular to build properly to a Django project](https://medium.com/swlh/django-angular-4-a-powerful-web-application-60b6fb39ef34)
 
 and StackOverflow for the occasional perplexing error message
