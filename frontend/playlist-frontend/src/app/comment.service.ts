@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -40,14 +40,26 @@ export class CommentService {
    * @param playID: a KEXP playlist API id for an individual play
    */
   getCommentByPlayId(playID: number) {
+    return this.getCommentsByPlayIds([playID]);
   }
-
 
   /**
    * Gets comments by play ids
    * @param playIDs: a list of KEXP playlist API ids for a set of plays
    */
   getCommentsByPlayIds(playIDs: number[]) {
+    const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments`;
+    const playIDString = playIDs.join(',');
+    const options = {
+      headers: new HttpHeaders({
+        // 'Authorization': 'my-auth-token'
+      }),
+      params: new HttpParams()
+      .append('play_id', playIDString)
+    };
+    return this.http.get<any>(url, options).pipe(
+      catchError(this.handleError<any>(`updateComment`))
+    );
   }
 
   /**
