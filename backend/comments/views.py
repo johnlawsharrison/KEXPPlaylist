@@ -26,8 +26,6 @@ class CommentPlayFilter(filters.FilterSet):
     """
     Defines a set of filters for the comments models
     """
-    # Using MultipleChoiceFilter results in a somewhat clunky syntax with chained queryparams:
-    # /api_v1/comments?play_id=<something>&play_id=<something_else>...
     play_id = InPlayIDsFilter()
 
     class Meta:
