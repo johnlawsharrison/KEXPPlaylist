@@ -24,6 +24,12 @@ a {
     flex-grow: 1;
 }
 
+.mat-chip-list {
+    outline: none !important;
+    border: 0;
+    opacity: 1 !important;
+}
+
 app-root {
     display: flex;
     flex-direction: column;
