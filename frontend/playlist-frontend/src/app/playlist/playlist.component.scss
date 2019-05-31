@@ -1,5 +1,9 @@
 .header-section {
     padding: 40px 20%;
+
+     .header-divider {
+        border-top-color: #ffc107;
+     }
 }
 
 .card-list-container {
@@ -10,7 +14,7 @@
 }
 
 .card-container {
-    margin-left: 15px;
+    margin-left: 16px;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -44,6 +48,7 @@
     overflow: hidden;
     white-space: nowrap;
     flex-grow: 1;
+    margin-left: 16px;
 
     span {
         position: relative;
@@ -55,17 +60,26 @@
             top: 50%;
             width: 300px;
             height: 1px;
-            background: grey;
+            background: #ffc107;
         }
 
         &:before {
             right: 100%;
-            margin-right: 15px;
+            margin-right: 16px;
         }
 
         &:after {
             left: 100%;
-            margin-left: 15px;
+            margin-left: 16px;
         }
     }
+}
+
+// force chips to remove hover styling
+.mat-standard-chip:hover::after {
+    opacity: 0;
+}
+
+.mat-standard-chip:focus::after {
+    opacity: 0;
 }
