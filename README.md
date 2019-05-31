@@ -9,6 +9,7 @@ I made use of the following documentation and blog post resources when putting t
    * [getting Angular to build properly to a Django project](https://medium.com/swlh/django-angular-4-a-powerful-web-application-60b6fb39ef34)
    * [a nice tool for help with CSS centering](http://howtocenterincss.com/)
    * [flexbox reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-7)
+   * [adjusting CSRF behavior from angular](https://stackoverflow.com/a/47591912)
 
 and StackOverflow for the occasional perplexing error message and CSS tricks
 
