@@ -24,9 +24,16 @@ a {
     flex-grow: 1;
 }
 
-app-draft-list {
+app-root {
     display: flex;
     flex-direction: column;
-    // height: 90vh; // to allow for scrolling independent of mat-sidenav-content
-    padding: 40px 200px 0px 200px;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    app-playlist {
+        flex: 1;
+    }
 }
