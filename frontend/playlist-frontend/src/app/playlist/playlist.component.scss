@@ -75,11 +75,20 @@
     }
 }
 
-// force chips to remove hover styling
-.mat-standard-chip:hover::after {
-    opacity: 0;
-}
+// chips
+.tag-chip {
 
-.mat-standard-chip:focus::after {
-    opacity: 0;
+    .local-chip {
+        min-height: 22px;
+        font-size: 10px;
+    }
+
+    // force chips to remove hover styling
+    .mat-standard-chip:hover::after {
+        opacity: 0;
+    }
+
+    .mat-standard-chip:focus::after {
+        opacity: 0;
+    }
 }
