@@ -3,52 +3,6 @@
     <mat-divider></mat-divider>
 </div>
 <div class="card-list-container mat-typography">
-    <div class="playlist-item" *ngFor="let play of recentPlays">
-        <div class="airdate"
-            *ngIf="play.playtype.playtypeid === 1">
-            <mat-chip-list selectable="false" class="tag-chip">
-                <mat-chip
-                selectable="false"
-                disableRipple="true"
-                >
-                    {{play.airdate | date:'shortTime'}}
-                </mat-chip>
-            </mat-chip-list>
-        </div>
-        <mat-card class="card-container"
-            *ngIf="play.playtype.playtypeid === 1">
-            <div class="album-art">
-                <img src="/static/angular/assets/orangebars.png">
-            </div>
-            <mat-card-header>
-                <mat-card-title>
-                    {{play.track.name}}
-                </mat-card-title>
-                <mat-card-subtitle>
-                    <span class="kexp-orange">{{play.artist.name}}</span>
-                </mat-card-subtitle>
-                <mat-card-subtitle *ngIf="play.artist.islocal">
-                    <mat-chip-list class="tag-chip">
-                        <mat-chip
-                        class="local-chip"
-                        color="accent"
-                        selected="true"
-                        disableRipple="true"
-                        >
-                        Local Artist
-                        </mat-chip>
-                    </mat-chip-list>
-                </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="comment-form-section">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Cupiditate, beatae illo nihil harum officiis facere nemo consequuntur
-                veritatis voluptatum voluptates pariatur quibusdam minus, in laboriosam
-                reprehenderit, odio saepe eaque quos?
-            </mat-card-content>
-        </mat-card>
-        <div class="air-break" *ngIf="play.playtype.playtypeid === 4">
-            <span>Air Break</span>
-        </div>
-    </div>
+    <app-playlist-item *ngFor="let play of recentPlays" [play]="play">
+    </app-playlist-item>
 </div>
