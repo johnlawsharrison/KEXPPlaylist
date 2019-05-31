@@ -48,14 +48,16 @@
                         required>
                     </textarea>
                 </mat-form-field>
-                <button
-                    *ngIf="commentForm.valid"
-                    mat-raised-button
-                    (click)="onCommentSave()"
-                    [disabled]="!commentForm.valid"
-                    color="accent">
-                    Save comment
-                </button>
+                <div class="form-buttons">
+                    <button
+                        *ngIf="commentForm.valid"
+                        mat-raised-button
+                        (click)="onCommentSave()"
+                        [disabled]="!commentForm.valid"
+                        color="accent">
+                        Save comment
+                    </button>
+                </div>
             </form>
         </mat-card-content>
     </mat-card>
