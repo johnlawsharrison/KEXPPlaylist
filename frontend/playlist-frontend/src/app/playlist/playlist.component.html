@@ -4,8 +4,7 @@
 </div>
 <div class="card-list-container mat-typography">
     <div class="playlist-item" *ngFor="let play of recentPlays">
-        <div
-            class="airdate"
+        <div class="airdate"
             *ngIf="play.playtype.playtypeid === 1">
             <mat-chip-list selectable="false" class="tag-chip">
                 <mat-chip
@@ -41,11 +40,11 @@
                     </mat-chip-list>
                 </mat-card-subtitle>
             </mat-card-header>
-            <mat-card-content>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus corrupti incidunt eos delectus qui. Temporibus deleniti
-                nostrum iure quidem, iste excepturi ea doloribus assumenda dignissimos
-                tempora! Porro doloribus rerum dolores.
+            <mat-card-content class="comment-form-section">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Cupiditate, beatae illo nihil harum officiis facere nemo consequuntur
+                veritatis voluptatum voluptates pariatur quibusdam minus, in laboriosam
+                reprehenderit, odio saepe eaque quos?
             </mat-card-content>
         </mat-card>
         <div class="air-break" *ngIf="play.playtype.playtypeid === 4">
