@@ -42,6 +42,12 @@
                 <textarea matInput placeholder="Add a comment for this play">
                 </textarea>
             </mat-form-field>
+            <button
+                mat-raised-button
+                (click)="onCommentSave()"
+                color="accent">
+                Save
+            </button>
         </mat-card-content>
     </mat-card>
     <div class="air-break" *ngIf="play.playtype.playtypeid === 4">

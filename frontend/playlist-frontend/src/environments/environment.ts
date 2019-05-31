@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendHost: 'localhost:8000',
+  backendHost: 'http://localhost:8000',
   commentAPIRoot: 'api_v1',
   playlistAPIHost: 'https://legacy-api.kexp.org'
 };
