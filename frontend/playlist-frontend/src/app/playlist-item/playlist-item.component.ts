@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Play } from '../models/play';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-playlist-item',
@@ -9,11 +10,24 @@ import { FormControl } from '@angular/forms';
 })
 export class PlaylistItemComponent implements OnInit {
   @Input() play: Play;
-  commentText = new FormControl('');
+  commentForm: FormGroup = this.fb.group({
+    commentText: ['', Validators.required]
+  });
 
-  constructor() { }
+  constructor(
+    private commentService: CommentService,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
   }
 
+  onCommentSave() {
+    const text = this.commentForm.value.commentText;
+    this.commentService.createNewComment(this.play.playid, text, 1).subscribe(
+      response => {
+        console.log(response);
+      }
+    );
+  }
 }

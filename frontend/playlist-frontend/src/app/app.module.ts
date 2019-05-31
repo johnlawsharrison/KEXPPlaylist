@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppMaterialModule } from './shared/material/app-material.module';
 import { PlaylistComponent } from './playlist/playlist.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
+import { HttpXsrfInterceptor } from './custom-interceptor';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,17 @@ import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'csrftoken',
+      headerName: 'X-CSRFToken'
+    }),
     AppMaterialModule,
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
