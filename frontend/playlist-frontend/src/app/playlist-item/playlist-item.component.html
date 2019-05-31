@@ -36,18 +36,26 @@
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="comment-form-section">
-            <mat-form-field class="full-width-comment"
-                floatLabel="always">
-                <mat-label>DJ Comment</mat-label>
-                <textarea matInput placeholder="Add a comment for this play">
-                </textarea>
-            </mat-form-field>
-            <button
-                mat-raised-button
-                (click)="onCommentSave()"
-                color="accent">
-                Save
-            </button>
+            <form [formGroup]="commentForm">
+                <mat-form-field class="full-width-comment"
+                    floatLabel="always">
+                    <mat-label>DJ Comment</mat-label>
+                    <textarea
+                        type="text"
+                        formControlName="commentText"
+                        matInput
+                        placeholder="Add a comment for this play"
+                        required>
+                    </textarea>
+                </mat-form-field>
+                <button
+                    mat-raised-button
+                    (click)="onCommentSave()"
+                    [disabled]="!commentForm.valid"
+                    color="accent">
+                    Save comment
+                </button>
+            </form>
         </mat-card-content>
     </mat-card>
     <div class="air-break" *ngIf="play.playtype.playtypeid === 4">
