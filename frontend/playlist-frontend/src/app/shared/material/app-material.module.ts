@@ -15,7 +15,8 @@ import {
   MatToolbarModule,
   MatDividerModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatChipsModule
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
@@ -25,14 +26,16 @@ import { CommonModule } from '@angular/common';
     MatToolbarModule,
     MatDividerModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
   exports: [
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ]
 })
 export class AppMaterialModule { }

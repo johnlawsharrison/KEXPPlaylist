@@ -1,10 +1,32 @@
-<div class='card-list-container'>
-    <mat-card *ngFor="let play of recentPlays">
-        <div *ngIf="play.playtype.playtypeid === 1">
-            {{play.track.name}} by {{play.artist.name}}
+<div class="header-section">
+    <h1 class="mat-h1">Playlist</h1>
+    <mat-divider></mat-divider>
+</div>
+<div class="card-list-container mat-typography">
+    <div class="playlist-item" *ngFor="let play of recentPlays">
+        <div
+            class="airdate"
+            *ngIf="play.playtype.playtypeid === 1">
+            <span class="kexp-orange">
+                {{play.airdate | date:'shortTime'}}
+            </span>
         </div>
-        <div *ngIf="play.playtype.playtypeid === 4">
-            Air break
+        <mat-card class="card-container"
+            *ngIf="play.playtype.playtypeid === 1">
+            <div class="album-art">
+                <img src="/static/angular/assets/orangebars.png">
+            </div>
+            <mat-card-header>
+                <mat-card-title>
+                    {{play.track.name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <span class="kexp-orange">{{play.artist.name}}</span>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <div class="air-break" *ngIf="play.playtype.playtypeid === 4">
+            <span class="kexp-orange">Air Break</span>
         </div>
-    </mat-card>
+    </div>
 </div>
