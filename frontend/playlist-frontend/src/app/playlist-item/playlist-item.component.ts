@@ -19,8 +19,7 @@ export class PlaylistItemComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onCommentSave() {
     const text = this.commentForm.value.commentText;

@@ -49,6 +49,7 @@
                     </textarea>
                 </mat-form-field>
                 <button
+                    *ngIf="commentForm.valid"
                     mat-raised-button
                     (click)="onCommentSave()"
                     [disabled]="!commentForm.valid"
