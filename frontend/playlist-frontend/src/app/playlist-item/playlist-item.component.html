@@ -12,11 +12,10 @@
     </div>
     <mat-card class="card-container"
         *ngIf="play.playtype.playtypeid === 1">
-        <div class="album-art mat-elevation-z2">
+        <div class="album-art mat-elevation-z3">
             <img
-            class="fallback"
-            src="/static/angular/assets/bars-white.svg">
-            <!-- src="{{play.release && play.release.largeimageuri ? play.release.largeimageuri : '/static/angular/assets/orangebars.png'}}" -->
+            [ngClass]="{'fallback': !(play.release && play.release.largeimageuri), 'found-art': (play.release && play.release.largeimageuri)}"
+            src="{{ (play.release && play.release.largeimageuri) ? play.release.largeimageuri : '/static/angular/assets/bars-white.svg'}}">
         </div>
         <mat-card-header>
             <mat-card-title>
