@@ -12,8 +12,11 @@
     </div>
     <mat-card class="card-container"
         *ngIf="play.playtype.playtypeid === 1">
-        <div class="album-art">
-            <img src="/static/angular/assets/orangebars.png">
+        <div class="album-art mat-elevation-z2">
+            <img
+            class="fallback"
+            src="/static/angular/assets/bars-white.svg">
+            <!-- src="{{play.release && play.release.largeimageuri ? play.release.largeimageuri : '/static/angular/assets/orangebars.png'}}" -->
         </div>
         <mat-card-header>
             <mat-card-title>
@@ -38,14 +41,18 @@
         <mat-card-content class="comment-form-section">
             <form [formGroup]="commentForm">
                 <div *ngIf="play.comment" class="existing-comment">
+                    <h3>DJ Comment</h3>
                     {{play.comment.comment_text}}
                 </div>
                 <mat-form-field *ngIf="!play.comment"
                     class="full-width-comment"
+                    hideRequiredMarker="true"
+                    appearance="outline"
                     floatLabel="always">
                     <mat-label>DJ Comment</mat-label>
                     <textarea
                         type="text"
+                        rows="5"
                         formControlName="commentText"
                         matInput
                         placeholder="Add a comment for this play"
@@ -61,6 +68,10 @@
                         color="accent">
                         Save comment
                     </button>
+                    <!-- <button
+                        mat-raised-button>
+                        {{play.comment ? 'Update comment' : 'Add comment'}}
+                    </button> -->
                 </div>
             </form>
         </mat-card-content>
