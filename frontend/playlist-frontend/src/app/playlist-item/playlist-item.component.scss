@@ -75,6 +75,26 @@
     }
 }
 
+.album-art {
+    background: radial-gradient(#616161,#212121);
+    flex: 0 0 150px;
+    height: 150px;
+
+    // center positioning and coloring of the placeholder svg
+    // might be kinda hacky
+    img.fallback {
+        opacity: .1;
+        font-size: 1rem;
+        line-height: 1.4;
+        width: 40%!important;
+        position: relative;
+        top: 30%;
+        display: block;
+        margin: 0 auto;
+        font-weight: 400;
+    }
+}
+
 // chips
 .tag-chip {
 
