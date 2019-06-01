@@ -17,10 +17,10 @@
         </div>
         <mat-card-header>
             <mat-card-title>
-                {{play.track.name}}
+                {{play.track ? play.track.name : 'Unknown Track'}}
             </mat-card-title>
             <mat-card-subtitle>
-                <span class="kexp-orange">{{play.artist.name}}</span>
+                <span class="kexp-orange">{{play.artist ? play.artist.name : 'Unknown Artist'}}</span>
             </mat-card-subtitle>
             <mat-card-subtitle *ngIf="play.artist.islocal">
                 <mat-chip-list class="tag-chip">

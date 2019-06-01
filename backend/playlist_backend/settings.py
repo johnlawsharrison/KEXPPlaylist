@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'comments.apps.CommentsConfig',
+    'playlist_data.apps.PlaylistDataConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
