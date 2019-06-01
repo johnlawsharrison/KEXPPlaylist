@@ -34,8 +34,20 @@
     flex-grow: 1;
     margin-left: 16px;
 
+    .existing-comment{
+
+        .comment-text {
+            text-indent: 25px;
+            line-height: 1.5;
+        }
+    }
+
     .full-width-comment {
         width: 100%;
+    }
+
+    .full-width-comment, .existing-comment {
+        margin-bottom: 24px;
     }
 
     .form-container {
@@ -52,9 +64,10 @@
         display: flex;
         justify-content: flex-end;
 
-        button {
+        button, .comment-author-credit {
             margin-right: 8px;
         }
+
     }
 }
 

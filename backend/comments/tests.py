@@ -19,6 +19,12 @@ class AuthorModelTest(TestCase):
         self.assertEqual(str(author), expected)
 
 
+    def test_get_author_credit(self):
+        author = Author(first_name="John", last_name="Harrison", role="KEXP Volunteer")
+        expected = "John Harrison (KEXP Volunteer)"
+        self.assertEqual(author.get_author_credit(), expected)
+
+
 class LinkModelTest(TestCase):
 
     def test_string_representation(self):

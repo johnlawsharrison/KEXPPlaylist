@@ -48,10 +48,9 @@
             <form class="form-container" [formGroup]="commentForm">
                 <div *ngIf="play.comment && !commentEditorVisible" class="existing-comment">
                     <h3>DJ Comment</h3>
-                    {{play.comment.comment_text}}
+                    <p class="comment-text">{{play.comment.comment_text}}</p>
                 </div>
-                <mat-form-field *ngIf="commentEditorVisible"
-                    class="full-width-comment"
+                <mat-form-field *ngIf="commentEditorVisible" class="full-width-comment"
                     hideRequiredMarker="true"
                     color="accent"
                     appearance="outline"
@@ -70,6 +69,14 @@
                 </mat-form-field>
                 <div class="flex-spacer"></div>
                 <div class="form-buttons">
+                    <div *ngIf="play.comment" class="comment-author-credit">
+                        <p class="mat-caption">
+                            comment added
+                            by {{play.comment.author.first_name}} {{play.comment.author.last_name}}
+                            at <span class="kexp-orange">{{play.comment.last_updated | date:'shortTime'}}</span>
+                        </p>
+                    </div>
+                    <div class="flex-spacer"></div>
                     <button *ngIf="commentEditorVisible && cancelable"
                         mat-raised-button
                         (click)="cancelCommentEdit()"
