@@ -11,6 +11,7 @@ import { CommentService } from '../comment.service';
 export class PlaylistItemComponent implements OnInit {
   @Input() play: Play;
   commentEditorVisible: boolean;
+  cancelable: boolean;
   commentForm: FormGroup;
 
   constructor(
@@ -24,6 +25,7 @@ export class PlaylistItemComponent implements OnInit {
       commentText: [existingComment, Validators.required]
     });
     this.commentEditorVisible = !this.play.comment;
+    this.cancelable = false;
   }
 
   onCommentSave() {
@@ -53,8 +55,11 @@ export class PlaylistItemComponent implements OnInit {
     }
     const existingComment = this.play.comment ? this.play.comment.comment_text : '';
     this.commentForm.reset({commentText: existingComment});
+    this.cancelable = false;
   }
 
-  toggleCommentEditor() {
+  updateComment() {
+    this.cancelable = true;
+    this.commentEditorVisible = true;
   }
 }

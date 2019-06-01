@@ -12,7 +12,7 @@
 // define dark theme palettes
 $primary: mat-palette($mat-grey, 900, 400);
 $accent: mat-palette($mat-amber, 500, 900);
-$warn: mat-palette($mat-red);
+$warn: mat-palette($mat-grey, 400);
 
 // create the dark theme
 $theme: mat-dark-theme($primary, $accent, $warn);

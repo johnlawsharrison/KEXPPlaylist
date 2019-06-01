@@ -64,7 +64,7 @@
                 </mat-form-field>
                 <div class="flex-spacer"></div>
                 <div class="form-buttons">
-                    <button *ngIf="commentEditorVisible && commentForm.dirty"
+                    <button *ngIf="commentEditorVisible && cancelable"
                         mat-raised-button
                         (click)="cancelCommentEdit()"
                         color="warn">
@@ -80,7 +80,7 @@
                     <button
                         *ngIf="!commentEditorVisible"
                         mat-raised-button
-                        (click)="commentEditorVisible = true"
+                        (click)="updateComment()"
                         color="accent"
                         >
                         Update comment
