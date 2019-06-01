@@ -9,14 +9,19 @@ export class Play {
     'release': any;
     releaseevent: any;
     track: any;
-    comment: Comment; // this app's comments? (maybe merge this with comments[])
     label: any;
-    comments: any[];
+    comments: any[]; // KEXP's actual comments
+    comment: Comment; // comments introduced by this app (these may be merged eventually)
     showid: number;
 }
 
 export class Comment {
-    commentText: string;
+    id: number;
+    'comment_text': string;
+    'play_id': number;
+    'date_created': string; // Date.toISOString()
+    'last_updated': string; // Date.toISOString()
+    author: number; // author id
 }
 
 export class Author {
