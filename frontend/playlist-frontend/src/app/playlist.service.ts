@@ -12,6 +12,13 @@ export class PlaylistService {
 
   constructor(private http: HttpClient) { }
 
+
+  /**
+   * Old approach:
+   * Gets recent plays directly from the KEXP playlist API
+   * @param beginTime Date object for the begin time of the query
+   * @param endTime Date object for the end time of the query
+   */
   getRecentPlays(beginTime: Date, endTime: Date): Observable<any> {
     const url = `${environment.playlistAPIHost}/play/`;
     const options = {
@@ -24,6 +31,19 @@ export class PlaylistService {
     };
     return this.http.get<any>(url, options).pipe(
       catchError(this.handleError<any>(`getRecentPlays`))
+    );
+  }
+
+  /**
+   * Updated approach:
+   * Gets recent plays by querying the backend
+   * which assembles playlist rows and existing comments/links all at once
+   * NOTE: defaults to plays from the last 60 minutes
+   */
+  getRecentPlaysFromBackend(): Observable<any> {
+    const url = `${environment.backendHost}/playlist-data`;
+    return this.http.get<any>(url).pipe(
+      catchError(this.handleError<any>(`getRecentPlaysFromBackend`))
     );
   }
 
