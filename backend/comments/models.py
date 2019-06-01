@@ -16,6 +16,10 @@ class Author(models.Model):
         return '{} {}'.format(self.first_name, self.last_name)
 
 
+    def get_author_credit(self):
+        return '{} {} ({})'.format(self.first_name, self.last_name, self.role)
+
+
 class Comment(models.Model):
     """
     A comment annotating a play row in the playlist
