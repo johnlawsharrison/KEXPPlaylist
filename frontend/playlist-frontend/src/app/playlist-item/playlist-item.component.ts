@@ -28,11 +28,31 @@ export class PlaylistItemComponent implements OnInit {
 
   onCommentSave() {
     const text = this.commentForm.value.commentText;
-    this.commentService.createNewComment(this.play.playid, text, 1).subscribe(
-      response => {
-        console.log(response);
-      }
-    );
+    if (this.play.comment) {
+      this.commentService.updateComment(this.play.comment.id, text, 1).subscribe(
+        newComment => {
+          this.play.comment = newComment;
+          this.commentEditorVisible = false;
+          this.commentForm.reset({commentText: this.play.comment.comment_text});
+        }
+      );
+    } else {
+      this.commentService.createNewComment(this.play.playid, text, 1).subscribe(
+        updatedComment => {
+          this.play.comment = updatedComment;
+          this.commentEditorVisible = false;
+          this.commentForm.reset({commentText: this.play.comment.comment_text});
+        }
+      );
+    }
+  }
+
+  cancelCommentEdit() {
+    if (this.play.comment) {
+      this.commentEditorVisible = false;
+    }
+    const existingComment = this.play.comment ? this.play.comment.comment_text : '';
+    this.commentForm.reset({commentText: existingComment});
   }
 
   toggleCommentEditor() {

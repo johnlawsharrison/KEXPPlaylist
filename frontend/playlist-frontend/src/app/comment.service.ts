@@ -72,7 +72,7 @@ export class CommentService {
    * @param authorID: id of the author updating the comment
    */
   updateComment(commentID: number, commentText: string, authorID: number) {
-    const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments/${commentID}`;
+    const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments/${commentID}/`;
     const options = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
