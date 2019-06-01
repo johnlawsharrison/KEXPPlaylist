@@ -13,6 +13,12 @@ I made use of the following documentation and blog post resources when putting t
 
 and StackOverflow for the occasional perplexing error message and CSS tricks
 
+### Discussion Topics
+
+Here's a brief reminder-list of design choices that I think merit discussion in person.
+
+- Association of plays to comments (handling on frontend vs. backend)
+
 ## Quick dev/demo mode setup
 
 All commands below are written with the working directory as the root of this repository

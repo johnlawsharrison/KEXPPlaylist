@@ -25,13 +25,13 @@ export class CommentService {
         // 'Authorization': 'my-auth-token'
       })
     };
-    const now =  new Date().toISOString();
+    const now = new Date().toISOString();
     const data = {
       comment_text: commentText,
       play_id: playID,
       author: authorID,
       last_updated: now,
-      date_created: now,
+      date_created: now
     };
     return this.http.post<any>(url, data, options).pipe(
       catchError(this.handleError<any>(`createNewComment`))
