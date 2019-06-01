@@ -10,6 +10,7 @@ import { CommentService } from '../comment.service';
 })
 export class PlaylistItemComponent implements OnInit {
   @Input() play: Play;
+  commentEditorVisible: boolean;
   commentForm: FormGroup = this.fb.group({
     commentText: ['', Validators.required]
   });
@@ -19,7 +20,9 @@ export class PlaylistItemComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.commentEditorVisible = !this.play.comment;
+  }
 
   onCommentSave() {
     const text = this.commentForm.value.commentText;
@@ -28,5 +31,8 @@ export class PlaylistItemComponent implements OnInit {
         console.log(response);
       }
     );
+  }
+
+  toggleCommentEditor() {
   }
 }

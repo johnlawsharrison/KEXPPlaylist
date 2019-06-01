@@ -39,12 +39,12 @@
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="comment-form-section">
-            <form [formGroup]="commentForm">
-                <div *ngIf="play.comment" class="existing-comment">
+            <form class="form-container" [formGroup]="commentForm">
+                <div *ngIf="play.comment && !commentEditorVisible" class="existing-comment">
                     <h3>DJ Comment</h3>
                     {{play.comment.comment_text}}
                 </div>
-                <mat-form-field *ngIf="!play.comment"
+                <mat-form-field *ngIf="commentEditorVisible"
                     class="full-width-comment"
                     hideRequiredMarker="true"
                     color="accent"
@@ -60,6 +60,7 @@
                         required>
                     </textarea>
                 </mat-form-field>
+                <div class="flex-spacer"></div>
                 <div class="form-buttons">
                     <button
                         *ngIf="commentForm.valid"
@@ -69,10 +70,14 @@
                         color="accent">
                         Save comment
                     </button>
-                    <!-- <button
-                        mat-raised-button>
-                        {{play.comment ? 'Update comment' : 'Add comment'}}
-                    </button> -->
+                    <button
+                        *ngIf="!commentEditorVisible"
+                        mat-raised-button
+                        (click)="commentEditorVisible = true"
+                        color="accent"
+                        >
+                        Update comment
+                    </button>
                 </div>
             </form>
         </mat-card-content>
