@@ -18,7 +18,9 @@ and StackOverflow for the occasional perplexing error message and CSS tricks
 
 Here's a brief reminder-list of design choices that I think merit discussion in person.
 
-- Association of plays to comments (handling on frontend vs. backend) [PR #16](https://github.com/johnlawsharrison/KEXPPlaylist/pull/16)
+- Association of plays to comments (handling on frontend vs. backend)
+	- Original approach [PR #16](https://github.com/johnlawsharrison/KEXPPlaylist/pull/16)
+	- Better approach [PR #17](https://github.com/johnlawsharrison/KEXPPlaylist/pull/17)
 
 ## Quick dev/demo mode setup
 
