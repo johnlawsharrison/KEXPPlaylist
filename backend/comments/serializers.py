@@ -8,6 +8,13 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ['id', 'comment_text', 'play_id', 'date_created', 'last_updated', 'author']
 
 
+class CommentWithAuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['id', 'comment_text', 'play_id', 'date_created', 'last_updated', 'author']
+        depth = 1
+
+
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
