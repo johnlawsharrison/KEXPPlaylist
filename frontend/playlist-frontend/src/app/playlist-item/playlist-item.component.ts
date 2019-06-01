@@ -11,9 +11,7 @@ import { CommentService } from '../comment.service';
 export class PlaylistItemComponent implements OnInit {
   @Input() play: Play;
   commentEditorVisible: boolean;
-  commentForm: FormGroup = this.fb.group({
-    commentText: ['', Validators.required]
-  });
+  commentForm: FormGroup;
 
   constructor(
     private commentService: CommentService,
@@ -21,6 +19,10 @@ export class PlaylistItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const existingComment = this.play.comment ? this.play.comment.comment_text : '';
+    this.commentForm = this.fb.group({
+      commentText: [existingComment, Validators.required]
+    });
     this.commentEditorVisible = !this.play.comment;
   }
 

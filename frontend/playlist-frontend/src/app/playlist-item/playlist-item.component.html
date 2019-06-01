@@ -56,14 +56,14 @@
                         rows="5"
                         formControlName="commentText"
                         matInput
-                        placeholder="Add a comment for this play"
                         required>
+                        Testing textarea fill
+                        {{play.comment ? play.comment.comment_text : ''}}
                     </textarea>
                 </mat-form-field>
                 <div class="flex-spacer"></div>
                 <div class="form-buttons">
-                    <button
-                        *ngIf="commentForm.valid"
+                    <button *ngIf="commentEditorVisible && commentForm.valid"
                         mat-raised-button
                         (click)="onCommentSave()"
                         [disabled]="!commentForm.valid"
