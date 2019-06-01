@@ -17,7 +17,7 @@
             [ngClass]="{'fallback': !(play.release && play.release.largeimageuri), 'found-art': (play.release && play.release.largeimageuri)}"
             src="{{ (play.release && play.release.largeimageuri) ? play.release.largeimageuri : '/static/angular/assets/bars-white.svg'}}">
         </div>
-        <mat-card-header>
+        <mat-card-header class="play-info-section">
             <mat-card-title>
                 {{play.track ? play.track.name : 'Unknown Track'}}
             </mat-card-title>
@@ -35,6 +35,13 @@
                     Local Artist
                     </mat-chip>
                 </mat-chip-list>
+            </mat-card-subtitle>
+            <mat-card-subtitle class="release-name">
+                {{play.release ? play.release.name : 'Unknown Album'}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                {{play.releaseevent ? play.releaseevent.year + ' - ' : ''}}
+                {{(play.label ? play.label.name : 'Unknown Label') | uppercase}}
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="comment-form-section">

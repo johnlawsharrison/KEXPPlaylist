@@ -23,9 +23,11 @@
     margin-bottom: 20px;
 }
 
-.play-title-section {
-    display: flex;
-    flex-direction: row;
+.play-info-section {
+
+    .release-name {
+        font-style: italic;
+    }
 }
 
 .comment-form-section {
