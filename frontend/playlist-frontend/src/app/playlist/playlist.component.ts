@@ -1,9 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Play } from '../models/play';
 import { PlaylistService } from '../playlist.service';
+import { trigger, style, state, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-playlist',
+  animations: [
+    trigger('playlistLoaded', [
+      state('loaded', style({
+        opacity: 1
+      })),
+      state('waiting', style({
+        opacity: 0
+      })),
+      transition('waiting => loaded', [
+        animate('1s')
+      ])
+    ])
+  ],
   templateUrl: './playlist.component.html',
   styleUrls: ['./playlist.component.scss']
 })
