@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Play } from '../models/play';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../comment.service';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-playlist-item',
@@ -16,6 +17,7 @@ export class PlaylistItemComponent implements OnInit {
 
   constructor(
     private commentService: CommentService,
+    private authorService: AuthorService,
     private fb: FormBuilder
   ) { }
 
@@ -30,18 +32,21 @@ export class PlaylistItemComponent implements OnInit {
 
   onCommentSave() {
     const text = this.commentForm.value.commentText;
+    const currentAuthor = this.authorService.getCurrentAuthor();
     if (this.play.comment) {
-      this.commentService.updateComment(this.play.comment.id, text, 1).subscribe(
+      this.commentService.updateComment(this.play.comment.id, text, currentAuthor.id).subscribe(
         newComment => {
           this.play.comment = newComment;
+          this.play.comment.author = currentAuthor;
           this.commentEditorVisible = false;
           this.commentForm.reset({commentText: this.play.comment.comment_text});
         }
       );
     } else {
-      this.commentService.createNewComment(this.play.playid, text, 1).subscribe(
+      this.commentService.createNewComment(this.play.playid, text, currentAuthor.id).subscribe(
         updatedComment => {
           this.play.comment = updatedComment;
+          this.play.comment.author = currentAuthor;
           this.commentEditorVisible = false;
           this.commentForm.reset({commentText: this.play.comment.comment_text});
         }

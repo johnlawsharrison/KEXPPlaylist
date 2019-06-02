@@ -21,10 +21,13 @@ export class Comment {
     'play_id': number;
     'date_created': string; // Date.toISOString()
     'last_updated': string; // Date.toISOString()
-    author: number; // author id
+    author: Author; // author id
 }
 
 export class Author {
+    id: number;
     firstName: string;
     lastName: string;
+    role: string;
+    'total_comments': number;
 }

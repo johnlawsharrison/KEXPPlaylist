@@ -1,0 +1,19 @@
+<h1 mat-dialog-title class="mat-h1">Welcome to the KEXP DJ playlist tool</h1>
+<h3 class="mat-h3">Select your name below to begin adding comments</h3>
+<mat-dialog-content>
+  <button *ngFor="let author of authors"
+    (click)="selectAuthor(author)"
+    mat-raised-button
+    color="primary">
+    {{author.first_name}} {{author.last_name}}
+  </button>
+</mat-dialog-content>
+<mat-dialog-actions
+  align="end">
+  <button (click)="skipAuthor()"
+    mat-raised-button
+    color="accent"
+    mat-dialog-close>
+    Skip
+  </button>
+</mat-dialog-actions>
