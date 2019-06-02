@@ -30,7 +30,7 @@ export class AuthorDialogComponent implements OnInit {
   }
 
   skipAuthor() {
-    const defaultAuthor = this.authors.find(author => author.role === 'admin');
+    const defaultAuthor = this.authors.find(author => author.role === 'default');
     this.authorService.setCurrentAuthor(defaultAuthor);
   }
 
