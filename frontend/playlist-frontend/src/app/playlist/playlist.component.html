@@ -1,4 +1,4 @@
-<div class="header-section">
+<div class="header-section" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
     <div class="header-content">
         <h1 class="mat-h1">Playlist</h1>
         <div class="flex-spacer"></div>
@@ -20,7 +20,7 @@
     </div>
     <mat-divider></mat-divider>
 </div>
-<div class="card-list-container mat-typography">
+<div class="card-list-container mat-typography" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
     <app-playlist-item *ngFor="let play of recentPlays" [play]="play">
     </app-playlist-item>
 </div>
