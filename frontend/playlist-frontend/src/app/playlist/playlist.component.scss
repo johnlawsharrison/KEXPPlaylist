@@ -1,9 +1,29 @@
 .header-section {
     padding: 40px 20%;
 
-     .header-divider {
-        border-top-color: #ffc107;
-     }
+    .header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .on-air {
+            margin: 0 16px 16px 0;
+        }
+
+        .show-info-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 50px 16px 0;
+
+            .mat-h4 {
+                margin-bottom: 0px;
+            }
+        }
+
+        .host-avatar {
+            margin: 0 16px 16px 0;
+        }
+    }
 }
 
 .card-list-container {

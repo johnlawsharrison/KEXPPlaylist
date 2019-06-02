@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Play } from '../models/play';
 import { PlaylistService } from '../playlist.service';
-import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-playlist',
@@ -10,16 +9,26 @@ import { CommentService } from '../comment.service';
 })
 export class PlaylistComponent implements OnInit {
   recentPlays: Play[];
+  currentShow: any;
 
   constructor(
-    private playlistService: PlaylistService,
-    private commentService: CommentService
-    ) { }
+    private playlistService: PlaylistService
+  ) { }
 
   ngOnInit() {
     this.playlistService.getRecentPlaysFromBackend().subscribe(
       response => {
         this.recentPlays = response.results;
+        // for current show, just take the first play
+        // (if we wanted to display show/host changes along the timeline
+        // we could do that on the backend just like the recentplays pattern,
+        // but that's pretty far out of scope for now)
+        const currentShowId = response.results[0].showid;
+        this.playlistService.getShowInfo(currentShowId).subscribe(
+          show => {
+            this.currentShow = show;
+          }
+        );
       }
     );
   }

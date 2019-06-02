@@ -47,6 +47,17 @@ export class PlaylistService {
     );
   }
 
+  /**
+   * Gets info for a show given a showId
+   * @param showId: primary key id of the show
+   */
+  getShowInfo(showId: number): Observable<any> {
+    const url = `${environment.playlistAPIHost}/show/${showId}/`;
+    return this.http.get(url).pipe(
+      catchError(this.handleError<any>(`getShowInfo`))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);
