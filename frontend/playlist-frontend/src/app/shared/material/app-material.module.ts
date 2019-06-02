@@ -18,7 +18,8 @@ import {
   MatCardModule,
   MatChipsModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatDialogModule
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
@@ -31,7 +32,8 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatChipsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   exports: [
     MatSidenavModule,
@@ -41,7 +43,8 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatChipsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ]
 })
 export class AppMaterialModule { }

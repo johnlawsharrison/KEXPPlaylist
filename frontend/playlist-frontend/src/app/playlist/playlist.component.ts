@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Play } from '../models/play';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Play, Author } from '../models/play';
 import { PlaylistService } from '../playlist.service';
 import { trigger, style, state, transition, animate } from '@angular/animations';
+import { MatDialog } from '@angular/material';
+import { AuthorDialogComponent } from '../author-dialog/author-dialog.component';
+import { CommentService } from '../comment.service';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-playlist',
@@ -24,12 +28,30 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
 export class PlaylistComponent implements OnInit {
   recentPlays: Play[];
   currentShow: any;
+  currentAuthor: Author;
 
   constructor(
-    private playlistService: PlaylistService
+    private playlistService: PlaylistService,
+    private authorService: AuthorService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
+    const authorLocal = JSON.parse(localStorage.getItem('KEXPPlaylistCurrentAuthor'));
+    if (authorLocal) {
+      this.authorService.setCurrentAuthor(authorLocal);
+    } else {
+      // open author dialog
+      this.authorService.getAllAuthors().subscribe(
+        authorsResponse => {
+          this.dialog.open(AuthorDialogComponent, {
+            data: {
+              authors: authorsResponse.results
+            }
+          });
+        }
+      );
+    }
     this.playlistService.getRecentPlaysFromBackend().subscribe(
       response => {
         this.recentPlays = response.results;

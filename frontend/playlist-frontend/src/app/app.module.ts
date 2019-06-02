@@ -10,13 +10,15 @@ import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angu
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
 import { HttpXsrfInterceptor } from './custom-interceptor';
+import { AuthorDialogComponent } from './author-dialog/author-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PlaylistComponent,
-    PlaylistItemComponent
+    PlaylistItemComponent,
+    AuthorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,9 @@ import { HttpXsrfInterceptor } from './custom-interceptor';
     }),
     AppMaterialModule,
     ReactiveFormsModule
-
+  ],
+  entryComponents: [
+    AuthorDialogComponent
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true}
