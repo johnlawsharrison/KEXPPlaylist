@@ -1,4 +1,6 @@
 # KEXPPlaylist
+[![GitHub tag](https://img.shields.io/github/tag/johnlawsharrison/KEXPPlaylist.svg)](https://github.com/johnlawsharrison/KEXPPlaylist/tags/)
+
 
 # References and resources
 I made use of the following documentation and blog post resources when putting this project together. I've labelled each of these with the specific problem area I found them useful for.
