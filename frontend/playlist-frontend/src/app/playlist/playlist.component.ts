@@ -47,7 +47,8 @@ export class PlaylistComponent implements OnInit {
           this.dialog.open(AuthorDialogComponent, {
             data: {
               authors: authorsResponse.results
-            }
+            },
+            disableClose: true
           });
         }
       );
