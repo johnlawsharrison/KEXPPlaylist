@@ -1,10 +1,11 @@
-/*
-* Custom http interceptor for setting the correct CSRF header for requests to Django
-*/
 import { HttpInterceptor, HttpXsrfTokenExtractor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
+/*
+* Custom http interceptor for setting the correct CSRF header for requests to Django
+* see: https://bit.ly/2QEJbL2
+*/
 @Injectable()
 export class HttpXsrfInterceptor implements HttpInterceptor {
 

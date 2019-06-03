@@ -25,7 +25,7 @@ export class AuthorService {
   }
 
   /**
-   * Gets the current author
+   * Gets the current author state
    */
   getCurrentAuthor() {
     return this.currentAuthor;
@@ -41,6 +41,10 @@ export class AuthorService {
     );
   }
 
+
+  /**
+   * Generic error handler for this service, just logs to console for now
+   */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);

@@ -1,6 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Author } from './models/play';
 
+/**
+ * AuthorSearchPipe implements an Angular pipe for searching/filtering
+ * a list of authors based on their first and last names
+ */
 @Pipe({
   name: 'authorSearch'
 })

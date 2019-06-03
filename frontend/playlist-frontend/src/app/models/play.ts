@@ -1,3 +1,12 @@
+
+/**
+ * Play represents a play row in the context of the frontend application
+ * most fields are reflected from the KEXP playlist API model, with
+ * the addition of a `comment` field for use with this app's comments
+ *
+ * I chose not to display comments from the live KEXP app, so that it will
+ * be easier to demo my own comment model
+ */
 export class Play {
     playid: number;
     playtype: any;
@@ -15,6 +24,10 @@ export class Play {
     showid: number;
 }
 
+
+/**
+ * Comment represents a play row comment made by a KEXP user
+ */
 export class Comment {
     id: number;
     'comment_text': string;
@@ -24,6 +37,10 @@ export class Comment {
     author: Author; // author id
 }
 
+
+/**
+ * Author represents a comment author
+ */
 export class Author {
     id: number;
     'first_name': string;
@@ -32,6 +49,13 @@ export class Author {
     'total_comments': number;
 }
 
+
+/**
+ * Link represents a link associated with a play
+ *
+ * This is intended for use in persisting links to the backend separately from comments
+ * for normalization purposes (discussion around this welcome)
+ */
 export class Link {
     'link_url': string;
     'play_id': string;

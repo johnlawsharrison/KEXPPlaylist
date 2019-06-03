@@ -42,12 +42,19 @@ export class AppComponent implements OnInit {
     );
   }
 
+  /**
+   * Switches the current author to a newly selected author
+   * @param newAuthor: the new author selected by the user
+   */
   switchAuthor(newAuthor: Author) {
     this.authorService.setCurrentAuthor(newAuthor);
     this.currentAuthor = newAuthor;
     this.sidenav.close();
   }
 
+  /**
+   * Handler for closing the author sidenav
+   */
   closeSidenav() {
     this.sidenav.close();
   }

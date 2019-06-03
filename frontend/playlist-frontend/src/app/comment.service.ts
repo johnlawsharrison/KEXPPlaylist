@@ -95,6 +95,10 @@ export class CommentService {
     );
   }
 
+
+  /**
+   * Generic error handler for this service, just logs to console for now
+   */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);

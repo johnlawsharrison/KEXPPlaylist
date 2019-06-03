@@ -33,6 +33,12 @@ export class PlaylistItemComponent implements OnInit {
     this.cancelable = false;
   }
 
+
+  /**
+   * Responds to a user saving an updated or new comment in the UI
+   * Creates a new comment or updates a comment depending on whether one
+   * already exists for the play
+   */
   onCommentSave() {
     const text = this.commentForm.value.commentText;
     // attempt to create anchor tags from  links in the comment text
@@ -62,6 +68,10 @@ export class PlaylistItemComponent implements OnInit {
     }
   }
 
+
+  /**
+   * Handler for closing a comment update in progress and resetting form state
+   */
   cancelCommentEdit() {
     if (this.play.comment) {
       this.commentEditorVisible = false;
@@ -71,6 +81,10 @@ export class PlaylistItemComponent implements OnInit {
     this.cancelable = false;
   }
 
+
+  /**
+   * Handler for a user opening the comment editor for an existing comment
+   */
   updateComment() {
     this.cancelable = true;
     this.commentEditorVisible = true;
@@ -78,7 +92,7 @@ export class PlaylistItemComponent implements OnInit {
 
   /**
    * Private helper that sets the comment text inner HTML,
-   * Replacing links with anchor tags
+   * Automatically replacing URLs found in the raw comment text with anchor tags
    * @param commentText: the text to parse into comment HTML
    */
   private setCommentHtmlWithAnchorTags(commentText: string) {

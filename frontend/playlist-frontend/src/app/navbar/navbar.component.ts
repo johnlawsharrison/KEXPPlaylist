@@ -19,6 +19,10 @@ export class NavbarComponent implements OnInit {
     this.currentAuthor = this.authorService.getCurrentAuthor();
   }
 
+
+  /**
+   * Toggles the sidenav open or closed state
+   */
   toggleSidenav() {
     this.sidenav.toggle();
   }
