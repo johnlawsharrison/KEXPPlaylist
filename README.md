@@ -125,5 +125,6 @@ python ./backend/manage.py migrate
 # you'll see the migrations run
 exit
 ```
+Assuming all goes well, you should be able to navigate to [http://localhost:8000/playlist](http://localhost:8000/playlist) and use the application!
 
 This setup probably isn't suitable for production without a few tweaks for db creds etc.
