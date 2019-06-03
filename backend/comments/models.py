@@ -10,6 +10,7 @@ class AuthorManager(models.Manager):
             # are somehow multiple defaults, semantically there isn't one
             return None
 
+
 class CommentManager(models.Manager):
 
     def authored_by(self, first_name, last_name):
