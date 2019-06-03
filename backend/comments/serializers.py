@@ -18,7 +18,7 @@ class CommentWithAuthorSerializer(serializers.ModelSerializer):
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
-        fields = ['id', 'first_name', 'last_name', 'role', 'total_comments']
+        fields = ['id', 'first_name', 'last_name', 'role', 'total_comments', 'is_default_author']
 
 
 class LinkSerializer(serializers.ModelSerializer):
