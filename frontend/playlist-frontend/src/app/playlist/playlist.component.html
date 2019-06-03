@@ -8,7 +8,7 @@
             </span>
         </h3>
         <img class="mat-card-avatar host-avatar" *ngIf="currentShow"
-            [src]="currentShow.hosts[0].newimageuri">
+            [src]="(currentShow.hosts.length > 0) ? currentShow.hosts[0].newimageuri : '/static/angular/assets/orangebars.png'">
         <div class="show-info-container" *ngIf="currentShow">
             <span class="mat-h4 show-name">
                 {{currentShow.program.name}}
