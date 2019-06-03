@@ -1,2 +1,26 @@
-<app-navbar class="mat-elevation-z6"></app-navbar>
-<app-playlist></app-playlist>
+<app-navbar [currentAuthor]="currentAuthor" class="mat-elevation-z6"></app-navbar>
+<mat-sidenav-container
+    hasBackdrop="false"
+    (backdropClick)="closeSidenav()">
+    <mat-sidenav-content>
+        <app-playlist></app-playlist>
+    </mat-sidenav-content>
+    <mat-sidenav
+        #sidenav
+        autoFocus="false"
+        mode="over"
+        position="end">
+        <div class="author-switch" *ngIf="allAuthors">
+            <h3 class="mat-h3">
+                Choose a different author for comments
+            </h3>
+            <mat-divider></mat-divider>
+            <button *ngFor="let author of allAuthors"
+                mat-button
+                color="accent"
+                (click)="switchAuthor(author)">
+                {{author.first_name}} {{author.last_name}}
+            </button>
+        </div>
+    </mat-sidenav>
+</mat-sidenav-container>

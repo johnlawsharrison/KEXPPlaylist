@@ -28,31 +28,12 @@ import { AuthorService } from '../author.service';
 export class PlaylistComponent implements OnInit {
   recentPlays: Play[];
   currentShow: any;
-  currentAuthor: Author;
 
   constructor(
-    private playlistService: PlaylistService,
-    private authorService: AuthorService,
-    public dialog: MatDialog
+    private playlistService: PlaylistService
   ) { }
 
   ngOnInit() {
-    const authorLocal = JSON.parse(localStorage.getItem('KEXPPlaylistCurrentAuthor'));
-    if (authorLocal) {
-      this.authorService.setCurrentAuthor(authorLocal);
-    } else {
-      // open author dialog
-      this.authorService.getAllAuthors().subscribe(
-        authorsResponse => {
-          this.dialog.open(AuthorDialogComponent, {
-            data: {
-              authors: authorsResponse.results
-            },
-            disableClose: true
-          });
-        }
-      );
-    }
     this.playlistService.getRecentPlaysFromBackend().subscribe(
       response => {
         this.recentPlays = response.results;

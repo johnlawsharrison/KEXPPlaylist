@@ -8,5 +8,14 @@
       <span>KEXP Playlist</span>
     </a>
     <div class="flex-spacer"></div>
+    <div *ngIf="currentAuthor" class="author-select">
+      <button mat-button (click)="toggleSidenav()" class="mat-caption">
+        <span>Commenting as
+          <span class="kexp-orange">
+            {{currentAuthor.first_name}} {{currentAuthor.last_name}}
+          </span>
+        </span>
+      </button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
