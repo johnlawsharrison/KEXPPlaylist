@@ -5,14 +5,16 @@
 # References and resources
 I made use of the following documentation and blog post resources when putting this project together. I've labelled each of these with the specific problem area I found them useful for.
 
-   * [An awesome blog post on designing Django models for maintainability](https://blog.kevinastone.com/django-model-behaviors)
+   * [A blog post on designing Django models for maintainability](https://blog.kevinastone.com/django-model-behaviors)
    * [Django Rest Framework (for CRUD operations)](https://www.django-rest-framework.org/api-guide/)
+   * [Angular material docs](https://material.angular.io)
    * [django-filter (for filtering comments by play_ids etc.)](https://django-filter.readthedocs.io/en/master/ref/filters.html)
    * [a bug I ran into building multi-value filtering for play-ids](https://stackoverflow.com/questions/8144582/django-how-do-i-use-a-string-as-the-keyword-in-a-q-statement)
    * [getting Angular to build properly to a Django project](https://medium.com/swlh/django-angular-4-a-powerful-web-application-60b6fb39ef34)
-   * [a nice tool for help with CSS centering](http://howtocenterincss.com/)
-   * [flexbox reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-7)
+   * [a nice tool for help with CSS centering gotchas](http://howtocenterincss.com/)
+   * [flexbox css reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-7)
    * [adjusting CSRF behavior from angular](https://stackoverflow.com/a/47591912)
+   * [a regex that works well for getting link URLs from comments](https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url)
 
 and StackOverflow for the occasional perplexing error message and CSS tricks
 
@@ -26,7 +28,7 @@ Here's a brief reminder-list of design choices that I think merit discussion in 
 
 ## Quick dev/demo mode setup
 
-All commands below are written with the working directory as the root of this repository
+All commands below are written assuming the root of this repository as the working directory
 
 ### Install dependencies
 
@@ -63,7 +65,8 @@ export SECRET_KEY='very secret key'
 
 ### Building the Angular frontend
 
-Source code for the frontend application is found in the `frontend` directory
+Source code for the frontend application is found in the `frontend` directory.
+
 In order for it to be served via the Django app, it must be built to the appropriate static folder like so:
 
 ```
@@ -76,7 +79,7 @@ to rebuild every time a change is seen in the source code
 
 ### Running the server
 
-(assuming a postgres server is already configured and running)
+(assuming a `postgres` server is already configured and running)
 
 Run the necessary migrations
 
