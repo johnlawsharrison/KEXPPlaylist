@@ -72,6 +72,10 @@ In order for it to be served via the Django app, it must be built to the appropr
 
 ```
 cd frontend/playlist-frontend
+
+# install angular dependencies
+npm install
+
 ng build --prod --output-path ../../backend/playlist_backend/static/angular --watch --output-hashing none
 ```
 
@@ -101,7 +105,7 @@ start the server
 python manage.py runserver
 ```
 
-## With Docker Compose
+## With Docker Compose (untested)
 
 I've created a very rudimentary docker-compose setup for this project
 
@@ -120,20 +124,18 @@ Run docker-compose to create the Django and postgres containers
 docker-compose up -d
 ```
 
-then run the migrations using `docker exec`
+then run the migrations in the container using `docker exec`
 
 ```
-docker ps -qf "name=playlist_django"
-# copy the container id that returns into the command below
-docker exec -it <id of your django container> bash
+docker exec -it playlist_django bash
 
 # from inside the container
 
-python ./backend/manage.py migrate
+python backend/manage.py migrate
 # load the default author fixtures
-python ./backend/manage.py loaddata authors.json
+python backend/manage.py loaddata authors.json
 exit
 ```
 Assuming all goes well, you should be able to navigate to [http://localhost:8000/playlist](http://localhost:8000/playlist) and use the application!
 
-This setup probably isn't suitable for production without a few tweaks for db creds etc.
+This setup isn't suitable for production without a wide variety of tweaks and security checks.
