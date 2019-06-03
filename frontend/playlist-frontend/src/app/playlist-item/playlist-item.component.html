@@ -45,7 +45,10 @@
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="comment-form-section">
-            <form class="form-container" [formGroup]="commentForm">
+            <form class="form-container" [formGroup]="commentForm"
+                (keydown.control.enter)="commentForm.valid ? onCommentSave() : ''"
+                (keydown.meta.enter)="commentForm.valid ? onCommentSave() : ''"
+                (keydown.escape)="(commentEditorVisible && cancelable) ? cancelCommentEdit() : ''">
                 <div *ngIf="play.comment && !commentEditorVisible" class="existing-comment">
                     <h3>DJ Comment</h3>
                     <!-- <p class="comment-text">{{play.comment.comment_text}}</p> -->

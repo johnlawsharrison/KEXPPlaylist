@@ -1,18 +1,20 @@
 <app-navbar [currentAuthor]="currentAuthor" class="mat-elevation-z6"></app-navbar>
 <mat-sidenav-container
-    hasBackdrop="false"
+    hasBackdrop="true"
     (backdropClick)="closeSidenav()">
     <mat-sidenav-content>
         <app-playlist></app-playlist>
     </mat-sidenav-content>
     <mat-sidenav
         #sidenav
-        autoFocus="false"
+        autoFocus="true"
         mode="over"
-        position="end">
+        position="end"
+        (keydown.escape)="closeSidenav()"
+        (keydown.arrowleft)="closeSidenav()">
         <div class="author-switch" *ngIf="allAuthors">
             <h3 class="mat-h3">
-                Choose a different author for comments
+                Choose a different author for your comments
             </h3>
             <mat-divider></mat-divider>
             <mat-form-field class="search-form" color="accent">
