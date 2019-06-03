@@ -24,7 +24,7 @@ class Comment(models.Model):
     """
     A comment annotating a play row in the playlist
     """
-    comment_text = models.CharField(max_length=1000)
+    comment_text = models.CharField(max_length=2000)
     play_id = models.IntegerField(default=0)
     date_created = models.DateTimeField('date created')
     last_updated = models.DateTimeField('last updated')
