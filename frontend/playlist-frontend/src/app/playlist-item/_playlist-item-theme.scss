@@ -1,0 +1,17 @@
+@mixin playlist-item-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+
+    .comment-text {
+
+        a {
+            color: mat-color($accent, 500);
+            transition: color 0.3s;
+            &:hover {
+                color: mat-color($primary, 600);
+            }
+        }
+    }
+}
