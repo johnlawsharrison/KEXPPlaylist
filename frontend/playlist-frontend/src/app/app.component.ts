@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 import { AuthorService } from './author.service';
 import { Author } from './models/play';
 import { SidenavService } from './sidenav.service';
@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   constructor(
     private sidenavService: SidenavService,
     private authorService: AuthorService,
-    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
