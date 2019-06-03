@@ -43,3 +43,8 @@ app-root {
         flex: 1;
     }
 }
+
+// fix weird overflow/scrolling issue with safari
+mat-sidenav-container.safari {
+    overflow: auto;
+}

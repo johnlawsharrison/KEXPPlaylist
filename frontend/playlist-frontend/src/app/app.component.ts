@@ -21,6 +21,11 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // fixes a weird Safari scrolling bug
+    if (navigator.userAgent.search('Safari') >= 0 && navigator.userAgent.search('Chrome') < 0) {
+      document.getElementsByTagName('mat-sidenav-container')[0].className += ' safari';
+    }
+
     this.sidenavService.setSidenav(this.sidenav);
     const authorLocal = JSON.parse(localStorage.getItem('KEXPPlaylistCurrentAuthor'));
     if (authorLocal) {
