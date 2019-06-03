@@ -43,16 +43,16 @@ python3 -m venv venv
 Install the Django app's dependencies
 
 ```
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 Set the following envvars for the postgres connection:
 
 ```
 export PG_HOST="<hostname for your postgresql server; defaults to localhost>"
-export PG_DB_NAME="playlist" # you may need to create this DB first
-export PG_USER=<username with access to the db above>
-export PG_PASSWORD=<password for user above>
+export PG_DB_NAME="playlist" # create this DB first; defaults to "postgres" if you just want to use that
+export PG_USER=<username with access to the db above> # defaults to "postgres"
+export PG_PASSWORD=<password for user above> # defaults to no password
 ```
 
 (for dev use only)
@@ -94,3 +94,36 @@ start the server
 ```
 python manage.py runserver
 ```
+
+## Using Docker Compose
+
+I've created a very rudimentary docker-compose setup for this project
+
+Follow these steps to get it running locally:
+
+Build the angular app to Django's static folder (same as above)
+
+```
+cd frontend/playlist-frontend
+ng build --prod --output-path ../../backend/playlist_backend/static/angular --watch --output-hashing none
+```
+
+Run docker-compose to create the Django and postgres containers
+
+```
+docker-compose up -d
+```
+
+then run the migrations using `docker exec`
+
+```
+docker ps -a
+# you should see an entry for your new django container, we use the id below
+docker exec -t -i <id of your django container> bash
+# from inside the container
+python ./backend/manage.py migrate
+# you'll see the migrations run
+exit
+```
+
+This setup probably isn't suitable for production without a few tweaks for db creds etc.

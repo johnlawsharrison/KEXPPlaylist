@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'playlist_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('PG_DB_NAME', 'playlist'),
+        'NAME': os.environ.get('PG_DB_NAME', 'postgres'),
         'HOST': os.environ.get('PG_HOST', 'localhost'),
         'USER': os.environ.get('PG_USER', ''),
         'PASSWORD': os.environ.get('PG_PASS', ''),
