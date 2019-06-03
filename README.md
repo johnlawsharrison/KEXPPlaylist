@@ -15,6 +15,7 @@ I made use of the following documentation and blog post resources when putting t
    * [flexbox css reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-7)
    * [adjusting CSRF behavior from angular](https://stackoverflow.com/a/47591912)
    * [a regex that works well for getting link URLs from comments](https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url)
+   * [regex testing](https://regexr.com/)
 
 and StackOverflow for the occasional perplexing error message and CSS tricks
 
