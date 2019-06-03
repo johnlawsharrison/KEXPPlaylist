@@ -3,6 +3,7 @@
 // Here we would import any child component theme mixins
 // which will be @included using this parent mixin
 @import './app/navbar/navbar-theme';
+@import './app/playlist-item/playlist-item-theme';
 
 @mixin shelves-app-theme($theme) {
     $primary: map-get($theme, primary);
@@ -43,4 +44,5 @@
 
     // individual component theming setup
     @include nav-bar-theme($theme);
+    @include playlist-item-theme($theme);
 }

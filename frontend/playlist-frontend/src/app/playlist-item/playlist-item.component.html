@@ -48,7 +48,8 @@
             <form class="form-container" [formGroup]="commentForm">
                 <div *ngIf="play.comment && !commentEditorVisible" class="existing-comment">
                     <h3>DJ Comment</h3>
-                    <p class="comment-text">{{play.comment.comment_text}}</p>
+                    <!-- <p class="comment-text">{{play.comment.comment_text}}</p> -->
+                    <p class="comment-text" [innerHTML]="commentHtml"></p>
                 </div>
                 <mat-form-field *ngIf="commentEditorVisible" class="full-width-comment"
                     hideRequiredMarker="true"

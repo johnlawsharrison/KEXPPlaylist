@@ -31,3 +31,8 @@ export class Author {
     role: string;
     'total_comments': number;
 }
+
+export class Link {
+    'link_url': string;
+    'play_id': string;
+}
