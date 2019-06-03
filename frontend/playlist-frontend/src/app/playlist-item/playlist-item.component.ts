@@ -82,11 +82,14 @@ export class PlaylistItemComponent implements OnInit {
    * @param commentText: the text to parse into comment HTML
    */
   private setCommentHtmlWithAnchorTags(commentText: string) {
-    const links = commentText.match(environment.linkRegex);
+    // we turn the list of links into a set so that we don't end up
+    // replacing the href values in the anchor tags with nested tags
+    const links = new Set(commentText.match(environment.linkRegex));
     if (links) {
       links.forEach(url => {
-        // replace each link with an anchor tag for the URL
-        commentText = commentText.replace(url, `<a href="${url}" target="_blank">${url}</a>`);
+        // replace all occurences of each link value with an anchor tag for the URL
+        const anchorTag = `<a href="${url}" target="_blank">${url}</a>`;
+        commentText = commentText.replace(new RegExp(url, 'g'), anchorTag);
       });
     }
     this.commentHtml = commentText;
