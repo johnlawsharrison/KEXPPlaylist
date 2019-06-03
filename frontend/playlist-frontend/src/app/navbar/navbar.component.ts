@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AuthorService } from '../author.service';
+import { Author } from '../models/play';
+import { SidenavService } from '../sidenav.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @Input() currentAuthor: Author;
 
-  constructor() { }
+  constructor(
+    private sidenav: SidenavService, // lets us open/close the sidenav from the navbar
+    private authorService: AuthorService) { }
 
   ngOnInit() {
+    this.currentAuthor = this.authorService.getCurrentAuthor();
   }
 
+  toggleSidenav() {
+    this.sidenav.toggle();
+  }
 }

@@ -5,3 +5,25 @@ app-navbar {
     right: 0;
     z-index: 6;
 }
+
+.author-switch {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    .mat-divider {
+        margin-bottom: 16px;
+    }
+
+    .button {
+        margin-bottom: 16px;
+    }
+
+    .mat-button.mat-accent {
+        color: #fff;
+    }
+}
+
+.mat-sidenav {
+    width: 300px;
+}
