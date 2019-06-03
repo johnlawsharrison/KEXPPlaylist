@@ -26,8 +26,8 @@ export class Comment {
 
 export class Author {
     id: number;
-    firstName: string;
-    lastName: string;
+    'first_name': string;
+    'last_name': string;
     role: string;
     'total_comments': number;
 }

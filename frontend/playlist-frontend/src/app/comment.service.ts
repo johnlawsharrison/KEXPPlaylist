@@ -21,8 +21,7 @@ export class CommentService {
     const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments/`;
     const options = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        // 'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       })
     };
     const now = new Date().toISOString();
@@ -54,9 +53,6 @@ export class CommentService {
     const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments`;
     const playIDString = playIDs.join(',');
     const options = {
-      headers: new HttpHeaders({
-        // 'Authorization': 'my-auth-token'
-      }),
       params: new HttpParams()
       .append('play_id', playIDString)
     };
@@ -75,12 +71,13 @@ export class CommentService {
     const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments/${commentID}/`;
     const options = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        // 'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       })
     };
+    const now = new Date().toISOString();
     const data = {
-      comment_text: commentText
+      comment_text: commentText,
+      last_updated: now
     };
     return this.http.patch<any>(url, data, options).pipe(
       catchError(this.handleError<any>(`updateComment`))
@@ -93,12 +90,7 @@ export class CommentService {
    */
   deleteComment(commentID: number) {
     const url = `${environment.backendHost}/${environment.commentAPIRoot}/comments/${commentID}`;
-    const options = {
-      headers: new HttpHeaders({
-        // 'Authorization': 'my-auth-token'
-      })
-    };
-    return this.http.delete<any>(url, options).pipe(
+    return this.http.delete<any>(url).pipe(
       catchError(this.handleError<any>(`updateComment`))
     );
   }

@@ -15,7 +15,10 @@
                 Choose a different author for comments
             </h3>
             <mat-divider></mat-divider>
-            <button *ngFor="let author of allAuthors"
+            <mat-form-field class="search-form" color="accent">
+                <input matInput [(ngModel)]="searchText" placeholder="Search by name">
+            </mat-form-field>
+            <button *ngFor="let author of allAuthors | authorSearch : searchText"
                 mat-button
                 color="accent"
                 (click)="switchAuthor(author)">

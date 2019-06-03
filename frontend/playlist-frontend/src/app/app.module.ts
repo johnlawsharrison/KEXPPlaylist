@@ -7,10 +7,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AppMaterialModule } from './shared/material/app-material.module';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
 import { HttpXsrfInterceptor } from './custom-interceptor';
 import { AuthorDialogComponent } from './author-dialog/author-dialog.component';
+import { AuthorSearchPipe } from './author-search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthorDialogComponent } from './author-dialog/author-dialog.component';
     NavbarComponent,
     PlaylistComponent,
     PlaylistItemComponent,
-    AuthorDialogComponent
+    AuthorDialogComponent,
+    AuthorSearchPipe
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { AuthorDialogComponent } from './author-dialog/author-dialog.component';
       headerName: 'X-CSRFToken'
     }),
     AppMaterialModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   entryComponents: [
