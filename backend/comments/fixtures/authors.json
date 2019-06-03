@@ -1,0 +1,244 @@
+[
+    {
+        "model": "comments.author",
+        "pk": 1,
+        "fields": {
+            "first_name": "KEXP",
+            "last_name": "Playlist",
+            "role": "default",
+            "total_comments": 0,
+            "is_default_author": true
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 3,
+        "fields": {
+            "first_name": "Heather",
+            "last_name": "Huizenga",
+            "role": "KEXP Software Dev",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 4,
+        "fields": {
+            "first_name": "Jay",
+            "last_name": "Kardong",
+            "role": "KEXP Software Dev",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 6,
+        "fields": {
+            "first_name": "Owen",
+            "last_name": "Murphy",
+            "role": "KEXP Content Producer",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 7,
+        "fields": {
+            "first_name": "Cheryl",
+            "last_name": "Waters",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 8,
+        "fields": {
+            "first_name": "Kevin",
+            "last_name": "Cole",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 9,
+        "fields": {
+            "first_name": "Eva",
+            "last_name": "Walker",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 10,
+        "fields": {
+            "first_name": "Troy",
+            "last_name": "Nelson",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 11,
+        "fields": {
+            "first_name": "Morgan",
+            "last_name": "Chosnyk",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 12,
+        "fields": {
+            "first_name": "Larry",
+            "last_name": "Rose",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 13,
+        "fields": {
+            "first_name": "Dylan",
+            "last_name": "Flesch",
+            "role": "KEXP Music Librarian",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 14,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Ware",
+            "role": "KEXP Project Manager",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 15,
+        "fields": {
+            "first_name": "Don",
+            "last_name": "Yates",
+            "role": "KEXP Music Director",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 17,
+        "fields": {
+            "first_name": "Michele",
+            "last_name": "Myers",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 18,
+        "fields": {
+            "first_name": "Kid",
+            "last_name": "Hops",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 19,
+        "fields": {
+            "first_name": "Gabriel",
+            "last_name": "Teodros",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 20,
+        "fields": {
+            "first_name": "DJ",
+            "last_name": "Riz",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 21,
+        "fields": {
+            "first_name": "Emily",
+            "last_name": "Fox",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 22,
+        "fields": {
+            "first_name": "DJ",
+            "last_name": "Chilly",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 16,
+        "fields": {
+            "first_name": "Darek",
+            "last_name": "Mazzone",
+            "role": "KEXP DJ",
+            "total_comments": 0,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 23,
+        "fields":{
+            "first_name": "Greg",
+            "last_name": "Vandy",
+            "role": "KEXP DJ",
+            "total_comments": 2,
+            "is_default_author": false
+        }
+    },
+    {
+        "model": "comments.author",
+        "pk": 2,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Harrison",
+            "role": "KEXP Volunteer",
+            "total_comments": 2,
+            "is_default_author": false
+        }
+    }
+]

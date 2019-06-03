@@ -89,13 +89,19 @@ cd backend
 python manage.py migrate
 ```
 
+Populate some default comment authors
+
+```
+python ./backend/manage.py loaddata authors.json
+```
+
 start the server
 
 ```
 python manage.py runserver
 ```
 
-## Using Docker Compose
+## With Docker Compose
 
 I've created a very rudimentary docker-compose setup for this project
 
@@ -117,12 +123,15 @@ docker-compose up -d
 then run the migrations using `docker exec`
 
 ```
-docker ps -a
-# you should see an entry for your new django container, we use the id below
-docker exec -t -i <id of your django container> bash
+docker ps -qf "name=playlist_django"
+# copy the container id that returns into the command below
+docker exec -it <id of your django container> bash
+
 # from inside the container
+
 python ./backend/manage.py migrate
-# you'll see the migrations run
+# load the default author fixtures
+python ./backend/manage.py loaddata authors.json
 exit
 ```
 Assuming all goes well, you should be able to navigate to [http://localhost:8000/playlist](http://localhost:8000/playlist) and use the application!

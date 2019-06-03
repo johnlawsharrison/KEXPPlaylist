@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
     this.sidenavService.setSidenav(this.sidenav);
     const authorLocal = JSON.parse(localStorage.getItem('KEXPPlaylistCurrentAuthor'));
-    if (authorLocal) {
+    if (authorLocal && authorLocal !== 'undefined') {
       this.authorService.setCurrentAuthor(authorLocal);
       this.currentAuthor = authorLocal;
     }
