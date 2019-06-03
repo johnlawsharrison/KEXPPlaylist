@@ -10,7 +10,6 @@ import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angu
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
 import { HttpXsrfInterceptor } from './custom-interceptor';
-import { AuthorDialogComponent } from './author-dialog/author-dialog.component';
 import { AuthorSearchPipe } from './author-search.pipe';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { AuthorSearchPipe } from './author-search.pipe';
     NavbarComponent,
     PlaylistComponent,
     PlaylistItemComponent,
-    AuthorDialogComponent,
     AuthorSearchPipe
   ],
   imports: [
@@ -33,9 +31,6 @@ import { AuthorSearchPipe } from './author-search.pipe';
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  entryComponents: [
-    AuthorDialogComponent
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true}

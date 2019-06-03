@@ -1,11 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Play, Author } from '../models/play';
+import { Component, OnInit } from '@angular/core';
+import { Play } from '../models/play';
 import { PlaylistService } from '../playlist.service';
 import { trigger, style, state, transition, animate } from '@angular/animations';
-import { MatDialog } from '@angular/material';
-import { AuthorDialogComponent } from '../author-dialog/author-dialog.component';
-import { CommentService } from '../comment.service';
-import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-playlist',
