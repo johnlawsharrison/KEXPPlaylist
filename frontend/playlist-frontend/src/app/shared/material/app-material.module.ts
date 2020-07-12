@@ -10,16 +10,14 @@ the application.
 */
 import { NgModule } from '@angular/core';
 
-import {
-  MatSidenavModule,
-  MatToolbarModule,
-  MatDividerModule,
-  MatButtonModule,
-  MatCardModule,
-  MatChipsModule,
-  MatInputModule,
-  MatFormFieldModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

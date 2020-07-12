@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { AuthorService } from './author.service';
 import { Author } from './models/play';
 import { SidenavService } from './sidenav.service';
