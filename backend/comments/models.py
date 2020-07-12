@@ -45,9 +45,9 @@ class Comment(models.Model):
     """
     comment_text = models.TextField()
     play_id = models.IntegerField(default=0)
-    date_created = models.DateTimeField(auto_now_add=True) # test auto now add
-    last_updated = models.DateTimeField(auto_now=True) # test auto now
-    author = models.ForeignKey(Author, blank=True, null=True) # test null author populates with default author
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, blank=True, null=True)
 
     objects = CommentManager()
 
