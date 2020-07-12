@@ -1,13 +1,16 @@
 language: python
 dist: bionic
+services:
+- postgresql
 python:
-  - "3.6"
-  - "3.8"
+- '3.6'
+- '3.8'
 install:
-  - cd backend
-  - pip install -r requirements.txt
-  # - django-admin.py startproject --template=./edge --extension=py,md,html,env my_proj
-  # - cp my_proj/settings/local.sample.env my_proj/settings/local.env
-  - python manage.py migrate
+- cd backend
+- pip install -r requirements.txt
+- python manage.py migrate
 script:
-  - python manage.py test
+- python manage.py test
+env:
+  global:
+    secure: IK+fke77BRwe4g/PoIw1K/9wH0OwfsJiY+xFLZZePB0Y22BETmehVWfClpS2pjLLV+/iotfWOdRml05EBkM5IYPAr3OyttDsaHxh+fypEUovYQ3azAm3dCE2Yy4SsPADln9YSHkhMxGATBrnvPPvpIz9raQgG448g0Rg6MDPrToYwvKhZuhK7uSHIzo2uUThxep8uts2iesmmYjfLnqapcUzbDM31/3RpT3Xjt+I/gsXpW69UQcFCvgpMwmNrPEIO/fC6rluPm/priDb/DBaFOVFTowizkx7W6jsh4GoLMxSrZMH2Dxf/BENIHPUQ0Gewii8T8uppZBoBh5iiICZUh2eZu72irv6X4+nwCXENw1C3sHrhZFNhMofC4FxEwoRg4J4slkzXgaq0QnuOd/fDMT4N+68TWQCWQyotglOLjAFNF1VJgIIJBvLyC7e6W1uq2UQpZhhGrYHOUf/cmUf0rqDsPDLHhXfEYF/a+XDPE1qkxXp+DHrzdvkRa9TWfLBM6s2pJd1W3ncJWu1k/h8B4gdlZ5A7UMUzAMLiYximp1v6d1uYz6izBPi554WCANhI+lY2HZZ53RNlBVCkB5h9fzttaxeA+ft/2hweaYfZ6Mm/r2eE+/bx8Xg+mSl2oACAJ9gztTq911jN375AutS5XfqTjs/FvEV1xW5RTCOLpI=
