@@ -1,0 +1,5 @@
+language: python
+# install project dependencies
+# TODO: this needs to be run in the context of the backend directory
+# install:
+# - pip install -r requirements.txt
