@@ -1,5 +1,12 @@
 language: python
-# install project dependencies
-# TODO: this needs to be run in the context of the backend directory
-# install:
-# - pip install -r requirements.txt
+python:
+  - "3.4"
+  - "3.6"
+install:
+  - cd backend
+  - pip install -r requirements.txt
+  # - django-admin.py startproject --template=./edge --extension=py,md,html,env my_proj
+  # - cp my_proj/settings/local.sample.env my_proj/settings/local.env
+  - python manage.py migrate
+script:
+  - python manage.py test
