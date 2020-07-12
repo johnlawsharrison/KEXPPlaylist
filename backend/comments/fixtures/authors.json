@@ -12,39 +12,6 @@
     },
     {
         "model": "comments.author",
-        "pk": 3,
-        "fields": {
-            "first_name": "Heather",
-            "last_name": "Huizenga",
-            "role": "KEXP Software Dev",
-            "total_comments": 0,
-            "is_default_author": false
-        }
-    },
-    {
-        "model": "comments.author",
-        "pk": 4,
-        "fields": {
-            "first_name": "Jay",
-            "last_name": "Kardong",
-            "role": "KEXP Software Dev",
-            "total_comments": 0,
-            "is_default_author": false
-        }
-    },
-    {
-        "model": "comments.author",
-        "pk": 6,
-        "fields": {
-            "first_name": "Owen",
-            "last_name": "Murphy",
-            "role": "KEXP Content Producer",
-            "total_comments": 0,
-            "is_default_author": false
-        }
-    },
-    {
-        "model": "comments.author",
         "pk": 7,
         "fields": {
             "first_name": "Cheryl",
@@ -91,8 +58,8 @@
         "model": "comments.author",
         "pk": 11,
         "fields": {
-            "first_name": "Morgan",
-            "last_name": "Chosnyk",
+            "first_name": "DJ",
+            "last_name": "Morgan",
             "role": "KEXP DJ",
             "total_comments": 0,
             "is_default_author": false
@@ -111,32 +78,10 @@
     },
     {
         "model": "comments.author",
-        "pk": 13,
-        "fields": {
-            "first_name": "Dylan",
-            "last_name": "Flesch",
-            "role": "KEXP Music Librarian",
-            "total_comments": 0,
-            "is_default_author": false
-        }
-    },
-    {
-        "model": "comments.author",
-        "pk": 14,
-        "fields": {
-            "first_name": "John",
-            "last_name": "Ware",
-            "role": "KEXP Project Manager",
-            "total_comments": 0,
-            "is_default_author": false
-        }
-    },
-    {
-        "model": "comments.author",
         "pk": 15,
         "fields": {
             "first_name": "Don",
-            "last_name": "Yates",
+            "last_name": "Slack",
             "role": "KEXP Music Director",
             "total_comments": 0,
             "is_default_author": false
@@ -146,7 +91,7 @@
         "model": "comments.author",
         "pk": 17,
         "fields": {
-            "first_name": "Michele",
+            "first_name": "DJ Michele",
             "last_name": "Myers",
             "role": "KEXP DJ",
             "total_comments": 0,
