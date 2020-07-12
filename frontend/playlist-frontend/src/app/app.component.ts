@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { AuthorService } from './author.service';
 import { Author } from './models/play';
 import { SidenavService } from './sidenav.service';
@@ -11,7 +11,7 @@ import { SidenavService } from './sidenav.service';
 })
 export class AppComponent implements OnInit {
   title = 'playlist-frontend';
-  @ViewChild('sidenav') public sidenav: MatSidenav;
+  @ViewChild('sidenav', { static: true }) public sidenav: MatSidenav;
   currentAuthor: Author;
   allAuthors: Author[];
 

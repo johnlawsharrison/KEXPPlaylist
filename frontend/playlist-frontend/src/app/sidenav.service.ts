@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 
 /**
  * A service that allows the sidenav to be manipulated from
