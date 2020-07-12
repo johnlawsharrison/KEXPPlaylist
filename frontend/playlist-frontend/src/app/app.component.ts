@@ -11,7 +11,7 @@ import { SidenavService } from './sidenav.service';
 })
 export class AppComponent implements OnInit {
   title = 'playlist-frontend';
-  @ViewChild('sidenav') public sidenav: MatSidenav;
+  @ViewChild('sidenav', { static: true }) public sidenav: MatSidenav;
   currentAuthor: Author;
   allAuthors: Author[];
 
