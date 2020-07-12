@@ -1,6 +1,6 @@
 import logging
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -22,14 +22,14 @@ class PlaylistDataView(View):
         and links from the backend database
         """
         # make a request to the playlist API to fetch the last 60 minutes of plays
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         then = now - timedelta(hours=1)
         params = {
-            'begin_time': then.isoformat(),
-            'end_time': now.isoformat()
+            'begin_time': then.isoformat()[:-6] + 'Z',
+            'end_time': now.isoformat()[:-6] + 'Z'
         }
-        r = requests.get('https://legacy-api.kexp.org/play', params=params)
-        recent_plays = r.json()
+        resp = requests.get('https://legacy-api.kexp.org/v1/play', params=params)
+        recent_plays = resp.json()
         # associate all comments and links models to a play
         # we have a sorted list of plays (by time)
         for play in recent_plays['results']:
