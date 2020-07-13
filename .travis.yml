@@ -1,16 +1,21 @@
 language: python
 dist: bionic
 services:
-- postgresql
+  - postgresql
 python:
-- '3.6'
-- '3.8'
+  - '3.6'
+  - '3.8'
 install:
-- cd backend
-- pip install -r requirements.txt
-- python manage.py migrate
+  - cd backend
+  - pip install -r requirements.txt
+  - python manage.py migrate
 script:
-- python manage.py test
+  - python manage.py test
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    branch: master
 env:
   global:
-  - secure: QF5K6e5yLapBVihMUtfd11G7FV1gNOaXn0Xbaf3mkN8BlGhdpOcOrcRlNErHaUJPUHuR2IQtVveAJj6lb1h6OSI+uJX2NbxUo7EzrX0IgSvC7nh4tLBSXkhJspdD6dWhQ96OX+WKqHAXnICxnAfxnv24ybh1BThillPOSjtYPjVOa3VLFsXqb6fzG1LnWVtTNxOknmgXyR7JJUjnUx4YG9kYgItLSv2J6tGcMI3TSyf4TquOB7Xp6/O+3S4dHIQk0fMhVFMvHdcxWEbgNc5ZRPFXcF1wMNbPJGBmdn31pRcaa9UjemFxSpYmt5KGlFh/0GJXc4MvArzwjDKvGA3n83mal9h6izhPB4O2G00zeOT808g5eb8mNaeaeVZmjKdEHcykZWtA7A538wOQm6+2QeMoQhfuSG71x1y3Dqzknl7sveW+VcIMh1puSW70FzqELL21NK8WINmc85xY+RZWLzX8IOLUA4mQVQxFbP1bqsw2x3FWm1QHgxEM0E3Ie+bW1+zaCS4/kIkHTk+EgjnpwU7wIm9lI2TPosbOWtBgWFA8jU+w/bMMc4loV/ghniRjbLeGoj8tQTeFY5O+M6kK7vjmBMVNr779n4KAMECygBGox5e2Wm36sxrKW0bG0LG9PAs53z6pCpFZvLpnCegE92SmncUMw4bKxgqaYbBxR2k=
+    - secure: QF5K6e5yLapBVihMUtfd11G7FV1gNOaXn0Xbaf3mkN8BlGhdpOcOrcRlNErHaUJPUHuR2IQtVveAJj6lb1h6OSI+uJX2NbxUo7EzrX0IgSvC7nh4tLBSXkhJspdD6dWhQ96OX+WKqHAXnICxnAfxnv24ybh1BThillPOSjtYPjVOa3VLFsXqb6fzG1LnWVtTNxOknmgXyR7JJUjnUx4YG9kYgItLSv2J6tGcMI3TSyf4TquOB7Xp6/O+3S4dHIQk0fMhVFMvHdcxWEbgNc5ZRPFXcF1wMNbPJGBmdn31pRcaa9UjemFxSpYmt5KGlFh/0GJXc4MvArzwjDKvGA3n83mal9h6izhPB4O2G00zeOT808g5eb8mNaeaeVZmjKdEHcykZWtA7A538wOQm6+2QeMoQhfuSG71x1y3Dqzknl7sveW+VcIMh1puSW70FzqELL21NK8WINmc85xY+RZWLzX8IOLUA4mQVQxFbP1bqsw2x3FWm1QHgxEM0E3Ie+bW1+zaCS4/kIkHTk+EgjnpwU7wIm9lI2TPosbOWtBgWFA8jU+w/bMMc4loV/ghniRjbLeGoj8tQTeFY5O+M6kK7vjmBMVNr779n4KAMECygBGox5e2Wm36sxrKW0bG0LG9PAs53z6pCpFZvLpnCegE92SmncUMw4bKxgqaYbBxR2k=
