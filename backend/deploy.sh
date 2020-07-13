@@ -1,2 +1,7 @@
 #!/bin/bash
-echo "Deploy script was called!"
+set -xe
+git remote add deploy "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIR}"
+git config user.name "Travis CI"
+git config user.email "johnlawsharrison+travis@gmail.com"
+
+git push --force deploy master
