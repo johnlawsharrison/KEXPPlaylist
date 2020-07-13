@@ -13,7 +13,7 @@ script:
   - python manage.py test
 deploy:
   provider: script
-  script: deploy.sh
+  script: ./deploy.sh
   on:
     branch: master
 env:
