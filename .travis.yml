@@ -1,5 +1,7 @@
 language: python
 dist: bionic
+git:
+  depth: false
 services:
 - postgresql
 python:
