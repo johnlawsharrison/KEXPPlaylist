@@ -44,5 +44,4 @@ class PlaylistDataView(View):
                 play['links'] = LinkSerializer(links_for_play, many=True).data
 
         response = JsonResponse({"results": recent_plays['results']})
-        # return the full data as JSON
         return response
