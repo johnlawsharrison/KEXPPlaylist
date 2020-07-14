@@ -1,6 +1,5 @@
 # KEXPPlaylist
 [![Build Status](https://travis-ci.com/johnlawsharrison/KEXPPlaylist.svg?branch=master)](https://travis-ci.com/johnlawsharrison/KEXPPlaylist)
-[![GitHub tag](https://img.shields.io/github/tag/johnlawsharrison/KEXPPlaylist.svg)](https://github.com/johnlawsharrison/KEXPPlaylist/tags/)
 
 
 # References and resources
