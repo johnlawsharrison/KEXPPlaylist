@@ -12,6 +12,10 @@ jobs:
   - language: nodejs
     node_js: 12
     script:
+      - cd fronted/playlist_frontend
+      - npm install
+      - ng build
+      - ls dist
       - node -e "console.log('Hi from NodeJS!')"
   - language: python
     services:
