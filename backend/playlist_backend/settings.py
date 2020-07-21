@@ -19,6 +19,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # load .env file
 dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
+# override if found at project level
+dotenv.load_dotenv(os.path.join(PROJECT_ROOT, '.env'), override=True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
