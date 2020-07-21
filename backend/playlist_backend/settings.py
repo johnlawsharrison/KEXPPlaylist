@@ -33,7 +33,8 @@ ALLOWED_HOSTS = [
 
 # add deployed host to allowed hosts
 DEPLOY_HOST = os.environ.get('DEPLOY_HOST', '')
-ALLOWED_HOSTS.append(DEPLOY_HOST) if DEPLOY_HOST
+if DEPLOY_HOST:
+  ALLOWED_HOSTS.append(DEPLOY_HOST)
 
 # Application definition
 
