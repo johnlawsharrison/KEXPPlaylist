@@ -21,10 +21,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(find_dotenv())
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', False) == 'True'
+DEBUG = os.getenv('DJANGO_DEBUG', False) == 'True'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
 ]
 
 # add deployed host to allowed hosts
-DEPLOY_HOST = os.environ.get('DEPLOY_HOST', '')
+DEPLOY_HOST = os.getenv('DEPLOY_HOST', '')
 if DEPLOY_HOST:
   ALLOWED_HOSTS.append(DEPLOY_HOST)
 
@@ -100,10 +100,10 @@ WSGI_APPLICATION = 'playlist_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('PG_DB_NAME', 'postgres'),
-        'HOST': os.environ.get('PG_HOST', 'localhost'),
-        'USER': os.environ.get('PG_USER', ''),
-        'PASSWORD': os.environ.get('PG_PASS', ''),
+        'NAME': os.getenv('PG_DB_NAME', 'postgres'),
+        'HOST': os.getenv('PG_HOST', 'localhost'),
+        'USER': os.getenv('PG_USER', ''),
+        'PASSWORD': os.getenv('PG_PASS', ''),
         'PORT': '5432',
     }
 }
