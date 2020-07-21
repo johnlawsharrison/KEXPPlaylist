@@ -32,6 +32,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')), # DRF login/logout for browsable API
     # entrypoint for the Angular app
-    url(r'^[Pp]laylist/', TemplateView.as_view(template_name="playlist.html"), name="playlist"),
     url(r'^playlist-data/', PlaylistDataView.as_view())
 ]
