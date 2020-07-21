@@ -4,3 +4,4 @@ djangorestframework==3.11.0
 psycopg2==2.8.5
 requests==2.24.0
 gunicorn==20.0.4
+python-dotenv==0.14.0
