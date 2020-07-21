@@ -16,7 +16,7 @@ jobs:
     - cd frontend/playlist-frontend
     - npm install
     script:
-    - ng build
+    - ng build --prod
     - ls dist
     - node -e "console.log('Hi from NodeJS!')"
     before_deploy:
