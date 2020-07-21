@@ -11,16 +11,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import dotenv
+from dotenv import load_dotenv, find_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# load .env file
-dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
-# override if found at project level
-dotenv.load_dotenv(os.path.join(PROJECT_ROOT, '.env'), override=True)
+# find .env
+load_dotenv(find_dotenv())
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
