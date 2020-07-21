@@ -15,7 +15,7 @@
         <div class="album-art mat-elevation-z3">
             <img
             [ngClass]="{'fallback': !(play.release && play.release.largeimageuri), 'found-art': (play.release && play.release.largeimageuri)}"
-            src="{{ (play.release && play.release.largeimageuri) ? play.release.largeimageuri : '/static/angular/assets/bars-white.svg'}}">
+            src="{{ (play.release && play.release.largeimageuri) ? play.release.largeimageuri : '/assets/bars-white.svg'}}">
         </div>
         <mat-card-header class="play-info-section">
             <mat-card-title>
