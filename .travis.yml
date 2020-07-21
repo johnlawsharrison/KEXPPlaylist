@@ -13,7 +13,7 @@ jobs:
   - language: nodejs
     node_js: 12
     install:
-    - cd frontend/playlist_frontend
+    - cd frontend/playlist-frontend
     - npm install
     script:
     - ng build
