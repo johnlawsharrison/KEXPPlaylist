@@ -1,11 +1,11 @@
 @import '../../styles/constants';
 
 .app-header {
-    padding: 0 16px;
+    padding: 0 1rem;
 }
 
 .search-form {
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 .kexp-logo {
@@ -16,18 +16,18 @@
 
 @media screen and (min-width: 520px) {
     .search-bar {
-        width: 15em;
+        width: 15rem;
     }
 }
 
 @media screen and (min-width: 875px) {
     .search-bar {
-        width: 30em;
+        width: 30rem;
     }
 }
 
 @media screen and (min-width: 1080px) {
     .search-bar {
-        width: 40em;
+        width: 40rem;
     }
 }

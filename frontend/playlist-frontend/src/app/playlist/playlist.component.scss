@@ -1,5 +1,8 @@
+
+@import '../../styles/constants';
+
 .header-section {
-    padding: 40px 20%;
+    padding: 2.5rem 0px;
 
     .header-content {
         display: flex;
@@ -26,9 +29,21 @@
     }
 }
 
-.card-list-container {
+.playlist-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 0px 20%;
+    padding: 0px 25%;
+}
+
+@media screen and (max-width: $medium-breakpoint-width) {
+  .playlist-container {
+    padding: 0px 15%;
+  }
+}
+
+@media screen and (max-width: $small-breakpoint-width) {
+  .playlist-container {
+    padding: 0px 1.5rem;
+  }
 }

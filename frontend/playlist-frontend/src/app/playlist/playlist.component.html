@@ -1,26 +1,28 @@
-<div class="header-section" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
+<div class="playlist-container">
+  <div class="header-section" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
     <div class="header-content">
-        <h1 class="mat-h1">Playlist</h1>
-        <div class="flex-spacer"></div>
-        <h3 class="mat-h3 on-air" *ngIf="currentShow">
-            <span class="kexp-orange">
-                On Air Now
-            </span>
-        </h3>
-        <img class="mat-card-avatar host-avatar" *ngIf="currentShow"
-            [src]="(currentShow.hosts.length > 0) ? currentShow.hosts[0].newimageuri : '/static/angular/assets/orangebars.png'">
-        <div class="show-info-container" *ngIf="currentShow">
-            <span class="mat-h4 show-name">
-                {{currentShow.program.name}}
-            </span>
-            <span class="mat-caption host-name" *ngFor="let host of currentShow.hosts">
-                {{host.name}}
-            </span>
-        </div>
+      <h1 class="mat-h1">Playlist</h1>
+      <div class="flex-spacer"></div>
+      <h3 class="mat-h3 on-air" *ngIf="currentShow">
+          <span class="kexp-orange">
+              On Air Now
+          </span>
+      </h3>
+      <img class="mat-card-avatar host-avatar" *ngIf="currentShow"
+          [src]="(currentShow.hosts.length > 0) ? currentShow.hosts[0].newimageuri : '/static/angular/assets/orangebars.png'">
+      <div class="show-info-container" *ngIf="currentShow">
+          <span class="mat-h4 show-name">
+              {{currentShow.program.name}}
+          </span>
+          <span class="mat-caption host-name" *ngFor="let host of currentShow.hosts">
+              {{host.name}}
+          </span>
+      </div>
     </div>
     <mat-divider></mat-divider>
-</div>
-<div class="card-list-container mat-typography" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
+  </div>
+  <div class="card-list-container mat-typography" [@playlistLoaded]="(recentPlays && currentShow) ? 'loaded' : 'waiting'">
     <app-playlist-item *ngFor="let play of recentPlays" [play]="play">
     </app-playlist-item>
+  </div>
 </div>

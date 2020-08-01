@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,7 +31,8 @@ import { AuthorSearchPipe } from './author-search.pipe';
     }),
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true}

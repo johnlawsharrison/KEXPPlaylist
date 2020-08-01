@@ -1,6 +1,6 @@
 <div class="playlist-item">
     <div class="airdate"
-        *ngIf="play.playtype.playtypeid === 1">
+        *ngIf="play.playtype.playtypeid === 1 && showBadge">
         <mat-chip-list selectable="false" class="tag-chip">
             <mat-chip
             selectable="false"
@@ -71,15 +71,15 @@
                         {{play.comment ? play.comment.comment_text : ''}}
                     </textarea>
                 </mat-form-field>
+                <div *ngIf="play.comment" class="comment-author-credit">
+                  <p class="mat-caption">
+                      comment added
+                      by {{play.comment.author.first_name}} {{play.comment.author.last_name}}
+                      at <span class="kexp-orange">{{play.comment.last_updated | date:'shortTime'}}</span>
+                  </p>
+                </div>
                 <div class="flex-spacer"></div>
                 <div class="form-buttons">
-                    <div *ngIf="play.comment" class="comment-author-credit">
-                        <p class="mat-caption">
-                            comment added
-                            by {{play.comment.author.first_name}} {{play.comment.author.last_name}}
-                            at <span class="kexp-orange">{{play.comment.last_updated | date:'shortTime'}}</span>
-                        </p>
-                    </div>
                     <div class="flex-spacer"></div>
                     <button *ngIf="commentEditorVisible && cancelable"
                         mat-raised-button
