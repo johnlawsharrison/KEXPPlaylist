@@ -31,6 +31,11 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    "https://playlist.johnlawsharrison.com",
+    "http://localhost:4200"
+]
+
 # add deployed host to allowed hosts
 DEPLOY_HOST = os.getenv('DEPLOY_HOST', '')
 if DEPLOY_HOST:
@@ -41,6 +46,7 @@ if DEPLOY_HOST:
 INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
+    'corsheaders',
     'comments.apps.CommentsConfig',
     'playlist_data.apps.PlaylistDataConfig',
     'django.contrib.admin',
@@ -64,6 +70,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
