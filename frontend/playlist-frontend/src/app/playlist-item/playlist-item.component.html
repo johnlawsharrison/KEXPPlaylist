@@ -14,8 +14,8 @@
         *ngIf="play.playtype.playtypeid === 1">
         <div class="album-art mat-elevation-z3">
             <img
-            [ngClass]="{'fallback': !(play.release && play.release.largeimageuri), 'found-art': (play.release && play.release.largeimageuri)}"
-            src="{{ (play.release && play.release.largeimageuri) ? play.release.largeimageuri : '/assets/bars-white.svg'}}">
+            [ngClass]="{'fallback': !(play.release && play.release.smallimageuri), 'found-art': (play.release && play.release.smallimageuri)}"
+            src="{{ (play.release && play.release.smallimageuri) ? play.release.smallimageuri : '/assets/bars-white.svg'}}">
         </div>
         <mat-card-header class="play-info-section">
             <mat-card-title>
