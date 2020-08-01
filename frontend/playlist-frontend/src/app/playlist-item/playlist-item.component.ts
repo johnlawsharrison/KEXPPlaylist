@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Play } from '../models/play';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { CommentService } from '../comment.service';
 import { AuthorService } from '../author.service';
 import { environment } from 'src/environments/environment';
@@ -16,14 +17,25 @@ export class PlaylistItemComponent implements OnInit {
   cancelable: boolean;
   commentForm: FormGroup;
   commentHtml: string; // the comment text, URLs replaced with <a> tags
+  showBadge: boolean;
 
   constructor(
     private commentService: CommentService,
     private authorService: AuthorService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private bp: BreakpointObserver
   ) { }
 
   ngOnInit() {
+    this.bp.observe([
+      Breakpoints.XSmall
+    ]).subscribe( (state: BreakpointState) => {
+      if (state.breakpoints[Breakpoints.XSmall]) {
+        this.showBadge = false;
+      } else {
+        this.showBadge = true;
+      }
+    });
     const existingComment = this.play.comment ? this.play.comment.comment_text : '';
     this.setCommentHtmlWithAnchorTags(existingComment);
     this.commentForm = this.fb.group({

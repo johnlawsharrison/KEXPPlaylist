@@ -9,10 +9,10 @@ app-navbar {
 .author-switch {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 2rem;
 
     .mat-divider {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
 
     .search-form {
@@ -20,7 +20,7 @@ app-navbar {
     }
 
     .button {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
 
     .mat-button.mat-accent {
